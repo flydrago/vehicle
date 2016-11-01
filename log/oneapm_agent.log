@@ -88,3 +88,6 @@
 [11/01/16 20:55:24 +0800 zqj (5869)] INFO : Finished instrumentation
 [11/01/16 20:55:24 +0800 zqj (5869)] INFO : Doing deferred library-detection before Rack startup
 [11/01/16 20:56:22 +0800 zqj (5869)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/01/16 21:35:40 +0800 zqj (5869)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/01/16 21:36:36 +0800 zqj (5869)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/01/16 21:37:01 +0800 zqj (5869)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.

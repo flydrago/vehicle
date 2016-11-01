@@ -2500,3 +2500,93 @@ MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000405129s
   Rendered cash_purchases/index.html.erb within layouts/application (0.8ms)
 [ahoy] Event excluded
 Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-01 21:35:39 +0800
+Processing by RootController#index as HTML
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('58188a9b4762261209007037')}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.0006209280000000001s
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"userinfos", "filter"=>{"role_marks"=>"platform"}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000567695s
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"userinfos", "filter"=>{"_id"=>BSON::ObjectId('58188a954762261209007036')}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000449351s
+  Rendered partials/_navbar.html.erb (0.6ms)
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"roles", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('581889c547622611d291aded')]}, "$or"=>[{"name"=>"system_management", "resource_type"=>nil, "resource_id"=>nil}]}}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.00060965s
+  Rendered partials/_business_siderbar.html.erb (2.2ms)
+  Rendered partials/_sidebar.html.erb (2.9ms)
+  Rendered partials/_breadcrumbs.html.erb (0.2ms)
+  Rendered root/index.html.haml (80.2ms)
+[ahoy] Event excluded
+Completed 200 OK in 90ms (Views: 81.7ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/cash_purchases" for 127.0.0.1 at 2016-11-01 21:35:40 +0800
+Processing by CashPurchasesController#index as */*
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('58188a9b4762261209007037')}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000662586s
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"userinfos", "filter"=>{"role_marks"=>"platform"}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000695092s
+  Rendered cash_purchases/index.html.erb within layouts/application (0.7ms)
+[ahoy] Event excluded
+Completed 200 OK in 44ms (Views: 37.7ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-01 21:36:35 +0800
+Processing by RootController#index as HTML
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('58188a9b4762261209007037')}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.0005660610000000001s
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"userinfos", "filter"=>{"role_marks"=>"platform"}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.001005718s
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"userinfos", "filter"=>{"_id"=>BSON::ObjectId('58188a954762261209007036')}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000506506s
+  Rendered partials/_navbar.html.erb (0.8ms)
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"roles", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('581889c547622611d291aded')]}, "$or"=>[{"name"=>"system_management", "resource_type"=>nil, "resource_id"=>nil}]}}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000539893s
+  Rendered partials/_business_siderbar.html.erb (2.2ms)
+  Rendered partials/_sidebar.html.erb (3.1ms)
+  Rendered partials/_breadcrumbs.html.erb (0.2ms)
+  Rendered root/index.html.haml (66.9ms)
+[ahoy] Event excluded
+Completed 200 OK in 77ms (Views: 67.8ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/cash_purchases" for 127.0.0.1 at 2016-11-01 21:36:36 +0800
+Processing by CashPurchasesController#index as */*
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('58188a9b4762261209007037')}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000344997s
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"userinfos", "filter"=>{"role_marks"=>"platform"}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000414103s
+  Rendered cash_purchases/index.html.erb within layouts/application (1.6ms)
+[ahoy] Event excluded
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-01 21:37:00 +0800
+Processing by RootController#index as HTML
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('58188a9b4762261209007037')}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000760513s
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"userinfos", "filter"=>{"role_marks"=>"platform"}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000634388s
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"userinfos", "filter"=>{"_id"=>BSON::ObjectId('58188a954762261209007036')}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000458873s
+  Rendered partials/_navbar.html.erb (0.7ms)
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"roles", "filter"=>{"_id"=>{"$in"=>[BSON::ObjectId('581889c547622611d291aded')]}, "$or"=>[{"name"=>"system_management", "resource_type"=>nil, "resource_id"=>nil}]}}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.000555489s
+  Rendered partials/_business_siderbar.html.erb (2.3ms)
+  Rendered partials/_sidebar.html.erb (3.1ms)
+  Rendered partials/_breadcrumbs.html.erb (0.2ms)
+  Rendered root/index.html.haml (94.3ms)
+[ahoy] Event excluded
+Completed 200 OK in 106ms (Views: 95.7ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/cash_purchases" for 127.0.0.1 at 2016-11-01 21:37:01 +0800
+Processing by CashPurchasesController#index as */*
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('58188a9b4762261209007037')}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.00040659800000000004s
+MONGODB | localhost:27017 | vehicle.find | STARTED | {"find"=>"userinfos", "filter"=>{"role_marks"=>"platform"}, "limit"=>-1}
+MONGODB | localhost:27017 | vehicle.find | SUCCEEDED | 0.00038960400000000005s
+  Rendered cash_purchases/index.html.erb within layouts/application (1.3ms)
+[ahoy] Event excluded
+Completed 200 OK in 21ms (Views: 16.5ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
