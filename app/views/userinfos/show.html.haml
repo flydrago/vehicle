@@ -1,0 +1,58 @@
+%h1 单位详细信息
+
+.row
+  .col-xs-2.text-right
+    = Userinfo.human_attribute_name(:shopname)
+    ：
+  .col-xs-8.text-left
+    = @userinfo.shopname
+.row
+  .col-xs-2.text-right
+    = Userinfo.human_attribute_name(:name)
+    ：
+  .col-xs-8.text-left
+    = @userinfo.name
+.row
+  .col-xs-2.text-right
+    = Userinfo.human_attribute_name(:idnumber)
+    ：
+  .col-xs-8.text-left
+    = @userinfo.idnumber
+.row
+  .col-xs-2.text-right
+    = Userinfo.human_attribute_name(:mobile)
+    ：
+  .col-xs-8.text-left
+    = @userinfo.mobile
+.row
+  .col-xs-2.text-right
+    = Userinfo.human_attribute_name(:email)
+    ：
+  .col-xs-8.text-left
+    = @userinfo.email
+.row
+  .col-xs-2.text-right
+    = Userinfo.human_attribute_name(:remark)
+    ：
+  .col-xs-8.text-left
+    = @userinfo.remark
+.row
+  .col-xs-2.text-right
+    = Userinfo.human_attribute_name(:status)
+    ：
+  .col-xs-8.text-left
+    = @userinfo.status_str
+.row
+  .col-xs-2.text-right
+    = '权限'
+    ：
+  .col-xs-8.text-left
+    - @userinfo_roles.each do |role|
+      = role.name_title
+
+%p
+= link_to '编辑',"",'data-href' => edit_userinfo_path(@userinfo),:class => 'btn btn-info'
+\|
+= link_to '返回',"",'data-href' => "#{userinfos_path}",:class => 'btn btn-info'
+
+

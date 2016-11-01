@@ -1,0 +1,19 @@
+@charset "utf-8";
+body{ max-width:1000px;}
+*{ margin:0px; padding:0px; font-family:"苹方"}
+img{ display:block;}
+.container{ width:100%; padding:0; margin:0; overflow:hidden;}
+.con_box{ width:100%; position:relative;}
+.tuzi{ position:absolute; width:30%; left:55%; top:8%; z-index:1000;}
+.anniu_01{ width:37%; position:absolute; bottom:12%; left:7%;}
+.anniu_01 img,.anniu_02 img{ width:100%;}
+.anniu_02{ width:37%; position:absolute; bottom:12%; right:7%;}
+.con_aa{ width:100%;}
+.con_bb{ width:64.8%; height:18.5%; background:url(../images/jyd_holiday_coupon_index2/hongbao01.png); background-size:100% 100%; background-repeat:no-repeat; position:absolute; left:17.6%; top:15%;}
+.con_bb_box{ width:82%; height:100%; position:absolute; margin-left:1%;}
+.con_cc{ width:100%; position:absolute; left:0; top:50%; margin-top:-55px;}
+.con_cc_box{ display:table; margin:0 auto;}
+.con_cc_01{ text-align:center; color:#fff1c7; font-size:120%; font-weight:bold;}
+.con_cc_01 span{ font-size:460% !important; line-height:100%;}
+.con_cc_02{ text-align:center; color:#fff1c7; font-size:100%;}
+

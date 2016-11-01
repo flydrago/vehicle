@@ -1,0 +1,33 @@
+%h1 角色列表
+.row#search-scope
+  .col-xs-12.row
+    .col-xs-1.text-right
+      %label{for:'name_title'} 角色中文名：
+    .col-xs-2.text-left
+      %input#name_title.form-control{:placeholder => '角色中文名'}
+    .col-xs-1.text-right
+      %label{for:'role_mark'} 角色范畴：
+    .col-xs-1.text-left
+      %select#role_mark.form-control
+        %option{value:''} --请选择--
+        %option{value:'platform'} 平台
+        %option{value:'business'} 单位
+        -#%option{value:'jxc'} 进销存
+    .col-xs-1.text-left
+      %a.btn.btn-primary.btn-sm#search 搜索
+
+.dataTables_wrapper.form-inline.no-footer
+
+  %table.table.table-hover#roles_table{'data-source'=>"/roles.json"}
+    %thead
+      %tr
+        %th 角色名称(English)
+        %th 角色中文名称
+        %th 角色范畴
+        %th 序号
+        %th 创建时间
+        %th 操作
+    %tbody
+
+
+= link_to '添加角色', '', 'data-href' =>new_role_path,class:"btn btn-primary"

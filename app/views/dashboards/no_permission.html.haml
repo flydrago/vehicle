@@ -1,0 +1,18 @@
+.row
+  .col-xs-12
+    .error-container
+      .well
+        %h1.grey.lighter.smaller
+          %span.blue.bigger-125
+            %i
+          = "401"
+          = "权限不够"
+          %hr
+
+        %h3.lighter.smaller
+          .space
+        .center
+          %a.btn.btn-grey{'href'=>'javascript:history.back()'}
+            %i.ace-icon.fa.fa-arrow-left 返回
+          %a.btn.btn-primary{'href'=>"##{dashboards_index_path}"}
+            %i.ace-icon.fa.fa-tachometer 仪表盘

@@ -1,0 +1,33 @@
+%h1 单位列表
+.row#search-scope
+  .col-xs-12.row
+    .col-xs-1.text-right
+      %label{for:'pusher_phone'} 法人手机号：
+    .col-xs-2.text-left
+      %input#pusher_phone.form-control{:placeholder => '法人手机号',:type => 'tel'}
+    .col-xs-1.text-right
+      %label{for:'status'} 状态：
+    .col-xs-1.text-left
+      %select#status.form-control
+        %option{value:''} --请选择--
+        %option{value:'0'} 未启用
+        %option{value:'1'} 启用
+        %option{value:'-1'} 停用
+    .col-xs-1.text-left
+      %a.btn.btn-primary.btn-sm#search 搜索
+
+.dataTables_wrapper.form-inline.no-footer
+
+  %table.table.table-hover#userinfos_table{'data-source'=>"/userinfos/jyd_index.json"}
+    %thead
+      %tr
+        %th 单位名称
+        %th 法人名称
+        %th 法人手机号
+        %th 区域
+        %th 状态
+        %th 操作
+    %tbody
+
+
+= link_to '添加单位', '','data-href' => jyd_new_userinfos_path, class:"btn btn-primary"

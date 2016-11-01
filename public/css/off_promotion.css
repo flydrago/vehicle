@@ -1,0 +1,38 @@
+*{margin: 0;padding: 0;}
+html, body {position: relative; }
+body{background: #6e098d;font-family:  Arial,"微软雅黑", Helvetica, sans-serif;font-size: 12px;padding-bottom: 20px;}
+a{text-decoration: none;-webkit-touch-callout: none;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+img{border: none;}
+.clearfix:after{content: " ";display: block;height: 0;clear: both;}
+.clearfix{*zoom:1;}/*IE6/7*/
+
+.banner{width: 100%;height: auto;display: block;}
+.cxt{width: 100%;background-color: #b50d64;text-align: center;height: 40px;}
+.cxt img{vertical-align: middle;}
+.cxt_title{line-height: 40px;font-size: 1.4em;margin: 0 8%;vertical-align: middle;color: #f6ec4c;}
+.cx_bg{height: 44px;display: block;margin: 15px auto;}
+.cx_spbig{margin-bottom:6px;}
+.cx_spsmall{margin-bottom:6px;}
+.cxspb_box{display: block;position: relative;background-color: #d20b72;}
+.cxspb_title{text-align: center;color: #ffac3d;font-size: 1.4em;line-height: 76px;}
+.cxspbb_left{float: left;width: 30%;overflow: hidden;}
+.cxspbb_left img{width: 100%;height: auto;display: block;}
+.cxspbb_rig{float: left;margin: 0 4%;max-width: 62%;}
+.cxspbbr_title,.cxspbbr_than{color: #ffecff;margin-bottom: 0.4em;font-size: 1.1em}
+.cxspbbr_name{color:#ffecff;margin-bottom: 0.5em;font-size: 1.4em;}
+.cxspbbr_num{color: #fff;font-size: 2.8em;margin-bottom: 4px;}
+.poso{position: absolute;top: 0;left: 0;height:74px;width: auto;}
+.post{position: absolute;bottom: 0;right: 0;height: 90px;width: auto;}
+.cxsps_left{float: left;position: relative;border: 1px solid #9a9a9a;width: 49%;background-color: #fff;padding-top: 20px;}
+.cxspsl_img{width: 80%;height: auto;display: block;margin: 0 auto;}
+.cxspslb_left{float: left;width: 50%;background-color: #eeeeee;text-align: center;height: 44px;}
+.cxspslb_left span{display: block;}
+.cxspslbl_top{color: #5d5d5d;font-size: 1.1em;line-height: 1.4em;margin-top: 6px;}
+.cxspslbl_bot{color: #606060;line-height: 1.2em;}
+.cxspslb_right{float: left;width: 50%;background-color: #d20b72;text-align: center;height: 44px;}
+.cxspslbr_top{display: block;line-height: 1.2em;margin-top: 6px;color: #ffa736;}
+.cxspslbr_big{font-size: 1.2em;}
+.cxspslbr_btn{display: block;color: #7b415a;width: 70%;line-height: 1.4em;border: 1px solid #7b415a;background-color: #fff;margin: 2px auto;}
+.cxsps_right{float: right;}
+.cxspsl_text{color: #040404;text-align: left;font-size: 1.1em;line-height: 1.5em;height: 38px;overflow: hidden;width: 90%;margin: 0 auto;}
+.posth{position: absolute;top: 0;left: 0;width: 46px;}

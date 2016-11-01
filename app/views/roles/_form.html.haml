@@ -1,0 +1,44 @@
+.hr.hr-16.hr-dotted
+.row
+  .container
+    = form_for @role ,url:{action: @action}, remote:true do |f|
+      #error_explanation{"style"=>"display:none"}
+        %ul
+      .col-sm-12
+        %form.form-horizontal
+          .form-group
+            .field
+              = f.label :name,'角色名称(English)',:class=>'col-sm-2 control-label no-padding-right'
+            .col-sm-5
+              = f.text_field :name,class: 'form-control',placeholder:'角色名称(English)'
+          .form-group
+            .field
+              = f.label :name_title,'角色中文名称',:class=>'col-sm-2 control-label no-padding-right'
+            .col-sm-5
+              = f.text_field :name_title,class: 'form-control',placeholder:'角色中文名称'
+          .form-group
+            .field
+              = f.label :sequence,'序号',:class=>'col-sm-2 control-label no-padding-right'
+            .col-sm-5
+              = f.number_field :sequence,class: 'form-control',placeholder:'序号'
+          .form-group
+            .field
+              = f.label :role_mark,'角色范畴',:class=>'col-sm-2 control-label no-padding-right'
+            .col-sm-5
+              = f.radio_button(:role_mark, 'platform')
+              = f.label :role_mark,'平台',:value=> 'platform'
+
+              &nbsp;&nbsp;
+              = f.radio_button(:role_mark, 'business')
+              = f.label :role_mark,'单位',:value=> 'business'
+
+
+              -#= f.label :role_mark,'进销存',:value=> 'jxc'
+              -#= f.radio_button(:role_mark, 'jxc')
+
+
+          .hr.hr-16.hr-dotted
+          .actions.col-sm-1.col-sm-offset-3
+            = f.submit '保存',:class=> 'btn btn-success',:data => { :"disable-with" => "保存中..." },onclick: 'return role_save_check()'
+          .actions.col-sm-8
+            = link_to '返回','', 'data-href' => roles_path,:class=>'btn btn-primary'

@@ -1,0 +1,24 @@
+%h1 用户列表
+
+.row#search-scope
+  .col-xs-12.row
+    .col-xs-1.text-right
+      %label{for:'mobile'} 手机号码：
+    .col-xs-2.text-left
+      %input#mobile.form-control{:placeholder => '手机号码',:type => 'tel'}
+    .col-xs-1.text-left
+      %a.btn.btn-primary.btn-sm#search 搜索
+
+.dataTables_wrapper.form-inline.no-footer
+
+  %table.table.table-hover#users_table{'data-source'=>"/admin/users.json"}
+    %thead
+      %tr
+        %th 用户姓名
+        %th 手机号码
+        %th 创建时间
+        %th 操作
+    %tbody
+
+
+= link_to '添加新用户', '', 'data-href' =>new_admin_user_path,class:"btn btn-primary"

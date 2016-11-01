@@ -1,0 +1,32 @@
+@charset "utf-8";
+*{ margin:0px; padding:0px; font-family:"苹方"}
+img{ display:block;}
+.container{ width:100%; padding:0; margin:0; overflow:hidden;}
+.ctt_img_box{ width:100%;}
+.ctt_img_box img{ width:100%;}
+.ctt_aa{ width:92%; margin-left:auto; margin-right:auto; background:url(../images/activity_jyd_coupon_index2/beijing.png); background-size:100% 100%; margin-bottom:5%; overflow:hidden; height:120px; position:relative;}
+.ctt_aa_aa{ width:41%; float:left;}
+.ctt_aa_aa_box{ display:table; margin:0 auto;}
+.ctt_aa_aa_box span{ float:left; color:#fa2525; font-size:140%; font-weight:bold; line-height:138px;}
+.ctt_aa_aa_box div{ float:left; color:#fa2525; font-size:360%; font-weight:bold; line-height:120px; font-family:"arial";}
+.ctt_aa_bb{ float:left; width:59%;}
+.ctt_aa_bb div{ color:#333333; position:relative;}
+.ctt_aa_bb div span{ position:absolute; left:-13px; width:4px; height:4px; background:#ff8c1b; border-radius:2px; top:50%; margin-top:-2px;}
+.ctt_aa_bb_01{ font-size:120%; font-weight:bold; line-height:30px; margin-left:10px; margin-top:25px;}
+.ctt_aa_bb_02{ font-size:100%; line-height:20px; margin-left:25px;}
+.ctt_aa_cc{ width:30px; height:30px; background:url(../images/activity_jyd_coupon_index2/bj_aa.png); background-size:100% 100%; background-repeat:no-repeat; position:absolute; top:8px; right:8px;}
+.ctt_aa_cc span{ display:block; text-align:center; line-height:30px; color:#fa2525; font-size:90%; font-weight:bold;}
+.ctt_btn{ display:block; width:70%; color:#fff; background:#fd3f25;border-radius:8px; font-size:140%; border:none; line-height:240%; outline:none; margin-left:auto; margin-right:auto; margin-top:5%; margin-bottom:12%;}
+.beijing{ width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(51,51,51,0.8); display:none;}
+.bj_box{ width:100%; position:relative;}
+.bj_box_img01{ width:100%;}
+.bj_box_img02{ width:26px; height:26px; position:absolute; top:10px; right:10px;}
+.bj_aa{ width:100%; position:absolute; left:0; bottom:0;}
+.bj_aa_aa{ text-align:center; color:#fff; font-size:140%; line-height:200%;}
+.bj_aa input{ display:block; width:166px; margin-left:auto; margin-right:auto; text-align:center; height:36px; background:#f6f8ed; border-radius:6px; outline:none; border:none; color:#999; line-height:36px; margin-top:10px;}
+.bj_aa button{ display:block; width:166px; height:36px; border:none; background:url(../images/activity_jyd_coupon_index2/btn_bj.png); border-radius:6px; background-size:100% 100%; background-repeat:no-repeat; margin-left:auto; margin-right:auto; margin-bottom:40px; margin-top:20px; font-size:110%; color:#150051; font-weight:bold;}
+.bj_aa_bb{ text-align:center; font-size:300%; line-height:120%; color:#f6db2a;}
+
+
+
+

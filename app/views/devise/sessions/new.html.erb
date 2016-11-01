@@ -1,0 +1,171 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta charset="utf-8"/>
+
+  <title><%= "酒运达" %></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag "rediscss/sessionindex.css"%>
+  <%= javascript_include_tag "registjs/jquery-1.10.2.min.js" %>
+  <%= javascript_include_tag "registjs/jquery.form" %>
+  <style>
+      .close {
+          float: right;
+          font-size: 21px;
+          font-weight: bold;
+          line-height: 1;
+          color: #000;
+          text-shadow: 0px 1px 0px #FFF;
+          opacity: 0.2;
+      }
+      .alert {
+          height: 45px;
+          font-size: 14px;
+          border-radius: 0px;
+      }.alert-warning {
+           background-color: #DFF0D8;
+
+           color: #8A6D3B;
+       }.alert .close {
+            font-size: 16px;
+        }
+  </style>
+</head>
+<body>
+<div class="main">
+  <div class="main_top">
+    <div class="logo"><a href="/"><%= image_tag("logo_32.png") %></a></div>
+    <div class="main_out">酒运达</div>
+    <div class="main_txt">欢迎登录</div>
+
+  </div>
+  <div class="con">
+    <div class="con_left">
+      <p style="color: red"><%= notice %></p>
+      <%= form_for(User.new, url: user_session_path) do |f| %>
+          <input type="hidden" name="rucaptcha_check" value="true">
+          <div class="con_group clearfix">
+            <label for="telphone" class="con_label one" >手机号码:</label>
+            <div class="frm_controls">
+              <input type="text" value="<%= flash[:mobile] if flash[:mobile].present?%>" name="user[mobile]" class="con_input" placeholder="手机号" required data-rule-mobile="true" data-msg-required="请输入手机号" data-msg-mobile="请输入正确格式" />
+            </div>   <!--frm_controls-->
+          </div>     <!--frm_control_group-->
+          <!--手机号-->
+          <!--密码-->
+          <div class="con_group clearfix">
+            <label for="password" class="con_label one">密码 :</label>
+            <div class="frm_controls">
+              <input class="con_input" type="password" name="user[password]" value="" placeholder="请输入密码" required id="password" minlength="6" data-msg-minlength="至少输入6个字符">
+            </div> <!--frm_controls-->
+          </div>     <!--frm_control_group-->
+          <!--<div class="con_group clearfix">-->
+            <!--<label for="" class="con_label one">验证码：</label>-->
+            <!--<div class="frm_controls">-->
+              <!--<input name="_rucaptcha" autocomplete="off" type="text" autocomplete="off" id="input_code" placeholder="必填"><a class="rucaptcha-image-box" href="#"><img alt="Captcha" class="rucaptcha-image" src="/rucaptcha/"></a>-->
+              <!--<span class="error" style="float: left;margin: 0px"><% if flash[:rucaptcha_error].present? %><%= flash[:rucaptcha_error] %><% end %></span>-->
+            <!--</div>    &lt;!&ndash;frm_controls&ndash;&gt;-->
+          <!--</div>     &lt;!&ndash;frm_control_group&ndash;&gt;-->
+          <!--验证码-->
+          <div class="frm_controls clearfix">
+            <label class="frm_checkbox_label  one" for="js_agree">
+              <%= f.check_box :remember_me,:id=> "js_agree",:class=>"frm_checkbox" %>
+              <span class="lbl_content">三天内自动登录</span>
+              <a href="/users/sessions/cheak_mobile" >忘记密码</a>
+            </label>
+            <input type="submit" class="button" value="登录" style="cursor: pointer">
+          </div>    <!--frm_controls-->
+      <% end %>
+    </div>
+    <div class="con_right">
+      <div class="con_logo"><%= image_tag("dada.png") %></div>
+      <div class="con_txt">
+        <span  class="con_span">下载手机配送客户端</span><br/>
+        <span>随时随地接单配送</span>
+      </div>
+      <div class="con_dw"><a href="#" id="con_li">立即下载<%= image_tag("load.png") %></a>
+        <div class="con_xz">
+          <div class="con_xztxt">使用微信扫码，直接下载安装</div>
+          <div class="con_xztxtone">
+            <div class="con_xztxtleft">
+              <div class="con_xzne">IOS版</div>
+              <div class="con_xztne"><%= image_tag("dada_ios.png") %></div>
+              <div class="con_xzte"><a class="con_dwa" href="http://fir.im/peisongduan" target="_blank">APP Store</a></div>
+            </div>
+            <div class="con_xztxtleft con_xztxtright">
+              <div class="con_xzne">Android版</div>
+              <div class="con_xztne"><%= image_tag("dada_andor.png") %></div>
+              <div class="con_xzte"><a class="con_dwa" href="http://fir.im/79vg" target="_blank">直接下载</a></div>
+            </div>
+          </div>  <!--con_xztxtone-->
+        </div>  <!--con_xz-->
+      </div>
+
+    </div>
+  </div>
+  <% if flash[:mesage].present? %>
+      <div class="alert alert-warning" id="warning" data-dismiss="alert">
+        <a href="#" class="close" data-dismiss="alert">
+          &times;
+        </a>
+        <div style="width: 150px;margin: 0px auto;padding-top: 10px ">
+          <p><%= flash[:mesage] %>.</p></div>
+      </div>
+  <% end %>
+  <div style="height: 10px"></div>
+  <div>
+  </div>
+  <footer>北京九酷网络科技有限公司</footer>
+</div>
+
+
+
+</body>
+<script>
+    $(document).ready(function(){
+        $(".close").click(function(){
+            $("#warning").remove();
+        });
+    })
+
+    $(function(){
+        $("#new_user").validate({
+
+            submitHandler: function() {
+                form.submit();
+            }
+        });
+        $(".rucaptcha-image-box").click(function(e){
+            btn = $(e.currentTarget)
+            img = btn.find('img:first')
+            currentSrc = img.attr('src');
+            img.attr('src', currentSrc.split('?')[0] + '?' + (new Date()).getTime())
+            return false
+        });
+    })
+
+    $.validator.setDefaults({
+        errorElement:'span'
+    });
+
+    $.extend($.validator.messages, {
+        required: '必填',
+        equalTo: "请再次输入相同的值"
+    });
+
+    jQuery.validator.addMethod("mobile", function (value, element) {
+        var mobile = /^1\d{10}$/;
+        return this.optional(element) || (mobile.test(value));
+    }, "手机格式不对");
+
+</script>
+
+
+
+</html>

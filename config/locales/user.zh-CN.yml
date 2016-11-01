@@ -1,0 +1,9 @@
+zh-CN:
+  mongoid:
+    models:
+      user: "用户"
+    attributes:
+      user:
+        name: '用户姓名'
+        mobile: '手机号码'
+        email: '邮箱'

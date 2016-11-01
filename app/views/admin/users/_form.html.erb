@@ -1,0 +1,67 @@
+<%= form_for [:admin, @user], :html => {:class => "form-horizontal user", :id => "user_form", multipart: true, remote: true} do |f| %>
+    <!--#error_explanation{"style"=>"display:none"}-->
+    <div id="error_explanation" style="display:none">
+      <ul></ul>
+    </div>
+    <input type="hidden" name="user[step]" value="3">
+    <% if @user.errors.any? %>
+        <div id="error_expl" class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= pluralize(@user.errors.count, "error") %> prohibited this user from being
+              saved:</h3>
+          </div>
+          <div class="panel-body">
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+    <% end %>
+
+
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'form-control', placeholder: "用户姓名" %>
+      </div>
+      <%= f.error_span(@user[:name]) %>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :mobile, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :mobile, :class => 'form-control', placeholder: "手机号码" %>
+      </div>
+
+    </div>
+
+
+    <div class="field">
+      <%= f.label :email, :class => 'control-label' %>
+      <%= f.text_field :email, autofocus: true, :class => 'form-control', placeholder: "邮箱" %>
+    </div>
+
+    <table width=700px>
+      <tr>
+        <dt><strong>权限:</strong></dt>
+      </tr>
+      <tr>
+        <% flag=1 %>
+        <% @roles.each do |role| %>
+            <td>
+              <%= check_box_tag "user[roles][]", role.name, @user.roles.include?(role),{:id => role.id} %> <%= label_tag(role.id.to_s, role.name_title) %>
+            </td>
+            <% if flag!=1&&flag % 4 ==0 %>
+            </tr><tr>
+            <% end %>
+            <% flag+=1 %>
+        <% end %>
+      </tr>
+    </table>
+
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+
+    <%= link_to '返回用户列表', '', 'data-href' => admin_users_path, class: 'btn btn-default' %>
+<% end %>

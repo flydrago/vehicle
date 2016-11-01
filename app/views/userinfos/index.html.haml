@@ -1,0 +1,55 @@
+%h1
+  = '单位列表'
+.row#search-scope
+  .col-xs-12.row
+    .col-xs-1.text-right
+      %label{for:'shopname'} 单位名称：
+    .col-xs-4.text-left
+      %input#shopname.form-control{:placeholder => '单位名称',:type => 'text'}
+    .col-xs-1.text-right
+      %label{for:'name'} 法人姓名：
+    .col-xs-2.text-left
+      %input#name.form-control{:placeholder => '法人姓名',:type => 'text'}
+    .col-xs-1.text-right
+      %label{for:'mobile'} 手机号：
+    .col-xs-2.text-left
+      %input#mobile.form-control{:placeholder => '手机号',:type => 'tel'}
+
+  .col-xs-12.row
+    .col-xs-1.text-right
+      %label{for:'created_at'}创建时间：
+    .col-xs-4.text-left
+      %div#created_at
+        %input#beginTime{:placeholder => '开始时间',:type => 'datetime'}
+        %span ~
+        %input#endTime{:placeholder => '截止时间',:type => 'datetime'}
+    .col-xs-1.text-right
+      %label{for:'status'} 状态：
+    .col-xs-1.text-left
+      %select#status.form-control
+        %option{value:''} --请选择--
+        %option{value:'0'} 待审核
+        %option{value:'1'} 已启用
+        %option{value:'-1'} 已禁用
+    .col-xs-1.text-right
+      %a.btn.btn-primary.btn-sm#search 搜索
+
+= hidden_field_tag 'userinfo_parent_id', "#{@parent_id}"
+- if policy(Userinfo).create?
+  = link_to '新建单位','','data-href' =>"#{new_userinfo_path}?parent_id=#{@parent_id}",:class => 'btn btn-info'
+.dataTables_wrapper.form-inline.no-footer
+  %table.table.table-hover{'data-source'=>"/userinfos.json?parent_id=#{@parent_id}",'id' => "#{controller_name}_datatable"}
+    %thead
+      %tr
+        %th= Userinfo.human_attribute_name(:shopname)
+        %th= Userinfo.human_attribute_name(:name)
+        %th= Userinfo.human_attribute_name(:mobile)
+        %th= Userinfo.human_attribute_name(:idnumber)
+        %th= Userinfo.human_attribute_name(:email)
+        %th= Userinfo.human_attribute_name(:created_at)
+        %th= Userinfo.human_attribute_name(:status)
+        %th 操作
+    %tbody
+
+-#- if policy(Userinfo).create?
+-#  = link_to '新建单位','','data-href' =>"#{new_userinfo_path}?parent_id=#{@parent_id}",:class => 'btn btn-info'

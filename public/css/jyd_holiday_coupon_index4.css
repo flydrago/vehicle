@@ -1,0 +1,13 @@
+@charset "utf-8";
+body{ max-width:1000px;}
+*{ margin:0px; padding:0px; font-family:"苹方"}
+img{ display:block;}
+.container{ width:100%; padding:0; margin:0; overflow:hidden;}
+.img_box{ width:100%; position:relative;}
+.img_aa{ width:100%;}
+.img_bb{ width:37.8%; height:9.5%; position:absolute; bottom:8%; left:31.1%; background:url(../images/jyd_holiday_coupon_index4/anniu.png); background-size:100% 100%; background-repeat:no-repeat; border:none; outline:none; z-index:1000;}
+.img_cc{ width:49.6%; height:48.6%; position:absolute; left:25%; top:22.7%; background:#FFF; border-radius:6px; overflow:hidden;}
+.img_cc_box{ width:100%; height:100%; position:relative;}
+.img_cc_box img{ width:102%; height:102%; margin-left:-1px; margin-top:-1px;}
+.img_dd{ width:100%; position:absolute; left:0; bottom:0;}
+

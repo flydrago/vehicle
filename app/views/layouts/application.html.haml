@@ -1,0 +1,59 @@
+= tinymce_assets
+-if File.exists?("#{Rails.root}/app/assets/stylesheets/#{controller_name}.scss") || File.exists?("#{Rails.root}/app/assets/stylesheets/#{controller_name}.css")
+  = stylesheet_link_tag controller_name, :media => "all"
+
+-if File.exists?("#{Rails.root}/app/assets/javascripts/#{controller_name}.coffee") || File.exists?("#{Rails.root}/app/assets/javascripts/#{controller_name}.js")
+  = javascript_include_tag controller_name
+
+%object{id:"LODOP_OB",classid:"clsid:2105C259-1E0C-4534-8141-A753534CB4CA",width:"0",height:"0"}
+  %embed{id:"LODOP_EM",type:"application/x-print-lodop",width:"0",height:"0",pluginspage:"install_lodop32.exe"}
+= include_gon
+%input{"type"=>"hidden","id"=>"controller_name","value"=>"#{controller_name}"}
+%input{"type"=>"hidden","id"=>"current_controller_name","value"=>"#{controller_name}"}
+%input{"type"=>"hidden","id"=>"current_action_name","value"=>"#{action_name}"}
+= yield
+
+-if flash[:notice]
+  :javascript
+    $.gritter.add({
+          title: '温馨提示',
+          text: '#{flash[:notice]}',
+          time: '3000',
+          class_name: 'gritter-info gritter-light'
+        });
+
+:javascript
+  var scripts = [null, null]
+  $('.page-content-area').ace_ajax('loadScripts', scripts, function() {
+  //inline scripts related to this page
+  });
+
+  $('a').each(function(){
+    if ($(this).attr('data-href') !== undefined) {
+      var href = $(this).attr('data-href');
+      console.log('application.html.haml---' + href);
+      $(this).attr('data-url', href);
+      $(this).attr('href', '#' + href);
+    }
+  })
+
+  if("undefined" == typeof gon || "undefined" == typeof gon.searchBar) {
+    $("#nav-search").hide();
+  }
+  else {
+    console.log(gon);
+    $("#nav-search").show();
+    delete gon.searchBar;
+  }
+
+  //jquery 初始化函数
+  $(function(){
+      //添加表单提交按钮重复提交雁阵
+      $("input[type='submit']").attr('data-disable-with',"Please wait...");
+      $(".no_repeat_submit").attr('data-disable-with',"Please wait...");
+  });
+
+
+
+
+

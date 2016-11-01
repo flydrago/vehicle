@@ -1,0 +1,37 @@
+<h1>
+  单位权限分配设置
+</h1>
+<hr>
+<%= form_for :user_info, url:{action: @action},remote: true do |f| %>
+    <!--#error_explanation{"style"=>"display:none"}-->
+    <div id="error_explanation" style="display:none">
+  <ul></ul>
+    </div>
+    <div id="userinfo_name">
+      <ul><h4>单位名称: <%= @user_info.shopname %></h4></ul>
+    </div>
+
+    <table width=700px border="1">
+      <tr>
+        <dt><strong>权限如下,请选择:</strong></dt>
+      </tr>
+      <tr>
+        <% flag=1 %>
+        <% @roles.each do |role| %>
+            <td>
+              <%= check_box_tag "userinfo[roles][]", role.id, @roles_id.include?(role.id),{:id => role.id} %> <%= label_tag(role.id, t(role.name_title)) %>
+            </td>
+            <% if flag!=1&&flag % 4 ==0 %>
+                </tr><tr>
+            <% end %>
+            <% flag+=1 %>
+        <% end %>
+        </tr>
+        </table>
+    <hr>
+
+    <%= hidden_field(:user_info,:id) %>
+    <%= f.submit '保存', :class => 'btn btn-success' %>
+
+    <%= link_to '返回', '', 'data-href' => userinfos_path, class: 'btn btn-primary' %>
+<% end %>

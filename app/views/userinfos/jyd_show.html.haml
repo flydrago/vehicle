@@ -1,0 +1,58 @@
+%p
+  %b 单位名称:
+  = @userinfo.shopname
+%p
+  %b 法人姓名:
+  = @userinfo.name
+%p
+  %b 法人身份证号:
+  = @userinfo.idnumber
+%p
+  %b 法人手机号码:
+  = @userinfo.pusher_phone
+%p
+  %b 权限:
+  %br
+  - @roles.each do |role|
+    =role.name_title
+    %br
+%p
+  %b 订酒电话:
+  = @userinfo.help_telephone
+%p
+  %b 接收提示短信手机号:
+  = @userinfo.achievesms_telephone
+%p
+  %b 单位状态:
+  = @userinfo.status_str
+%p
+  %b 营业时间:从
+  = @userinfo.start_business
+  至
+  = @userinfo.end_business
+%p
+  %b 默认运费:
+  = @userinfo.fright
+%p
+  %b 默认起送价格:
+  = @userinfo.lowestprice
+%p
+  %b 预警库存数量:
+  = @userinfo.alarm_stock
+%p
+  %b 省:
+  = @userinfo.province
+%p
+  %b 市:
+  = @userinfo.city
+%p
+  %b 县/区:
+  = @userinfo.district
+%p
+= link_to '返回',"",'data-href' =>jyd_index_userinfos_path,:class => 'btn btn-info'
+-#= link_to '编辑',"",'data-href' =>'/userinfos/jyd_edit/'+ @userinfo.id,:class => 'btn btn-info'
+-#\|
+-#-if current_user.has_role?(:userinfo_admin)
+-#  = link_to '返回',"",'data-href' =>jyd_index_userinfos_path,:class => 'btn btn-info'
+-#-else
+-#  = link_to '返回',"",'data-href' => '/userinfos/jyd_edit/'+@userinfo.id,:class => 'btn btn-info'
