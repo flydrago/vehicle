@@ -23,37 +23,17 @@ end
 #初始化平台运营商信息
 def init_userinfo
 
-#初始化平台账号
+  #初始化平台账号
   platform_userinfo = Userinfo.create(:id => BSON::ObjectId("56c45924c2fb4e205000000d"),
                                       :shopname => "车辆管理系统平台",
-                                      :name =>  "张三",
-                                      :province =>  "中国",
-                                      :city => "北京",
-                                      :district => "",
+                                      :mobile =>  "12345678900",
+                                      :name =>  "平台",
+                                      :email =>  "12345678900@163.com",
+                                      :idnumber => "41111111111111111111111",
+                                      :remark => "车辆管理",
                                       :role_marks => ["platform"],
-                                      :pusher_phone => "12345678901",
-                                      :status => 1,
-                                      :email => "12345678901@163.com",
-                                      :alarm_stock => 10,
-                                      :lowestprice => 19,
-                                      :fright => 3,
-                                      :wx_name => "",
-                                      :openid => "",
-                                      :integral => 0,
-                                      :work_24 => "false",
-                                      :pdistance_state => 0,
-                                      :pdistance => 0,
-                                      :pdistance_ask => 0,
-                                      :h_fright => 0,
-                                      :h_lowestprice => 0,
-                                      :channel_ids => [],
-                                      :help_telephone => "",
-                                      :yqx_url => "http://a.eqxiu.com/s/dH91BoVd",
-                                      :updated_at => Time.now,
-                                      :yqx_title => "车辆管理",
-                                      :yqx_desc => "车辆管理",
-                                      :share_desc => "车辆管理",
-                                      :achievesms_telephone => "13838257740")
+                                      :role_ids => Role.where({:role_mark => "platform"}).collect{|r| r.id},
+                                      :status => 1)
 
   User.create( :name => "管理员",
                :mobile => "12345678900",
