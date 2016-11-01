@@ -1,0 +1,1 @@
+rails g scaffold carousel_apply title field_mark:integer event_mark:integer event_memo
