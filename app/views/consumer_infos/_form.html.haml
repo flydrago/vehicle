@@ -41,7 +41,7 @@
       %td
         =  f.file_field :picture,:accept=>'image/*'
         .col-sm-6
-          %img#picture{:style => "height:200px;width:200px"}
+          %img#picture{:style => "height:200px;width:200px",:src=>@consumer_info.picture.url}
 
   .actions
     = f.submit '保存',class:'btn btn-info',style:'display:'+(@operation == 'show' ? 'none':'inline' )+''
