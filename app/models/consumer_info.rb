@@ -10,7 +10,7 @@ class ConsumerInfo
   field :identity_card,type: String #身份证号
   field :address,type: String,default: "" #地址
   field :mobile, type: String # 手机号
-  has_mongoid_attached_file :picture, :default_url => '/missing.png'
+  has_mongoid_attached_file :picture, :default_url => '/customer_missing.png'
   validates_attachment_content_type :picture, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 
