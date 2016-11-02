@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :consumer_infos
   get 'dashboards/index' => 'dashboards#index'
   get 'dashboards/no_permission' => 'dashboards#no_permission'
 
