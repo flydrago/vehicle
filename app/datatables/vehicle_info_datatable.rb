@@ -22,9 +22,17 @@ class VehicleInfoDatatable
         rows << data.vehicle_brand
         rows << data.vehicle_name
         rows << data.vehicle_model
+        rows << data.vehicle_engine_number
+        rows << data.vehicle_color
         rows << data.vehicle_style
         rows << data.created_at.strftime("%Y-%m-%d %H:%M:%S")
-        rows << "操作"
+        rows << raw("<div class='hidden-sm hidden-xs action-buttons'>
+          <a class='btn btn-xs btn-info' data-url='#{@view.vehicleinfo_path(data)}' href='##{@view.vehicleinfo_path(data)}'>查看</a>
+          <a class='btn btn-xs btn-info' data-url='#{@view.edit_vehicleinfo_path(data)}' href='##{@view.edit_vehicleinfo_path(data)}'>
+                <i class='ace-icon fa fa-pencil bigger-130'>编辑</i>
+          </a>
+          <a class='btn btn-xs btn-danger'  data-method='delete' data-remote='true' data-confirm='你确定删除吗?' href='/vehicleinfos/#{data.id}'>删除</a>
+         </div>")
         rows
       end
     end
@@ -52,7 +60,9 @@ class VehicleInfoDatatable
 
       # search_params[:userinfo_id] = @current_user['userinfo_id']
       search_params[:vehicle_brand] = /#{params[:vehicle_brand]}/ if params[:vehicle_brand].present?
-      search_params[:name] = /#{params[:sSearch]}/ if params[:sSearch].present?
+      search_params[:vehicle_name] = /#{params[:vehicle_name]}/ if params[:vehicle_name].present?
+      search_params[:vehicle_model] = /#{params[:vehicle_model]}/ if params[:vehicle_model].present?
+      search_params[:vehicle_style] = /#{params[:vehicle_style]}/ if params[:vehicle_style].present?
       search_params
     end
 
@@ -65,7 +75,7 @@ class VehicleInfoDatatable
     end
 
     def sort_column
-      columns = %w(vehicle_brand vehicle_name vehicle_model vehicle_style created_at caozuo)
+      columns = %w(vehicle_brand vehicle_name vehicle_model vehicle_engine_number vehicle_color vehicle_style created_at caozuo)
       columns[params[:iSortCol_0].to_i]
     end
 

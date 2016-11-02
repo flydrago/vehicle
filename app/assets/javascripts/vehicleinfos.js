@@ -32,13 +32,15 @@ $(function () {
         stateSave: true,
         sAjaxSource: $('#vihicle_infos_table').data('source'),
         language: datatable_language,
-        "order": [[4, 'desc']],
+        "order": [[6, 'desc']],
         "columnDefs": [
             {"orderable": false, "targets": 0},
             {"orderable": false, "targets": 1},
             {"orderable": false, "targets": 2},
             {"orderable": false, "targets": 3},
-            {"orderable": false, "targets": 5}
+            {"orderable": false, "targets": 4},
+            {"orderable": false, "targets": 5},
+            {"orderable": false, "targets": 7}
         ]
     });
 })

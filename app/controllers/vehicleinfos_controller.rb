@@ -13,6 +13,7 @@ class VehicleinfosController < ApplicationController
   # GET /vehicleinfos/1
   # GET /vehicleinfos/1.json
   def show
+    @operation = 'show'
   end
 
   # GET /vehicleinfos/new
@@ -23,6 +24,7 @@ class VehicleinfosController < ApplicationController
 
   # GET /vehicleinfos/1/edit
   def edit
+    @action = "update"
   end
 
   # POST /vehicleinfos
@@ -44,11 +46,9 @@ class VehicleinfosController < ApplicationController
   def update
     respond_to do |format|
       if @vehicleinfo.update(vehicleinfo_params)
-        format.html { redirect_to @vehicleinfo, notice: 'Vehicleinfo was successfully updated.' }
-        format.json { render :show, status: :ok, location: @vehicleinfo }
+        format.js { render_js_for_form @vehicleinfo,vehicleinfos_path, '修改成功!' }
       else
-        format.html { render :edit }
-        format.json { render json: @vehicleinfo.errors, status: :unprocessable_entity }
+        format.js { render_js_for_form @vehicleinfo }
       end
     end
   end
@@ -58,8 +58,7 @@ class VehicleinfosController < ApplicationController
   def destroy
     @vehicleinfo.destroy
     respond_to do |format|
-      format.html { redirect_to vehicleinfos_url, notice: 'Vehicleinfo was successfully destroyed.' }
-      format.json { head :no_content }
+      format.js { render_js_for_form @vehicleinfo,vehicleinfos_path, '删除成功!' }
     end
   end
 
@@ -71,6 +70,6 @@ class VehicleinfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vehicleinfo_params
-      params.require(:vehicleinfo).permit(:vehicle_brand,:vehicle_name, :vehicle_model,:vehicle_style)
+      params.require(:vehicleinfo).permit(:vehicle_brand,:vehicle_name, :vehicle_model,:vehicle_engine_number,:vehicle_color,:vehicle_style)
     end
 end
