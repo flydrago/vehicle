@@ -46,8 +46,7 @@ class ConsumerInfosController < ApplicationController
   def update
     respond_to do |format|
       if @consumer_info.update(consumer_info_params)
-        format.html { redirect_to @consumer_info, notice: 'Consumer info was successfully updated.' }
-        format.json { render :show, status: :ok, location: @consumer_info }
+        format.js { render_js_for_form @consumer_info, consumer_infos_path, '客户信息新建成功！' }
       else
         format.html { render :edit }
         format.json { render json: @consumer_info.errors, status: :unprocessable_entity }

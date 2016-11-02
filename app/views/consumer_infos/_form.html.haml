@@ -8,21 +8,24 @@
       %td
         %label{class:'attr-category'}
           基本信息
-      %td{colspan:3}
+      %td{colspan:5}
     %tr
       %td
         = f.label :姓名
       %td
         = f.text_field :name,:class=>'form-control'
+    %tr
       %td
         = f.label :生日
-      %td
-        = f.text_field :birthday,:class=>'form-control'
+      %td{:style => "width: 300px;"}
+        %span{:class => "input-daterange input-group", :style => "display: inline;"}
+        = f.text_field :birthday,:id=>"birthday",:class=>'form-control'
     %tr
       %td
         = f.label :身份证号
       %td
         = f.text_field :identity_card,:class=>'form-control'
+    %tr
       %td
         = f.label :地址
       %td
