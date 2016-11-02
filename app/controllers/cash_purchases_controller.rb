@@ -4,7 +4,10 @@ class CashPurchasesController < ApplicationController
   # GET /cash_purchases
   # GET /cash_purchases.json
   def index
-    @cash_purchases = CashPurchase.all
+    respond_to do |format|
+      format.html
+      format.json { render json: CashPurchaseDatatable.new(view_context, current_user) }
+    end
   end
 
   # GET /cash_purchases/1
@@ -14,6 +17,7 @@ class CashPurchasesController < ApplicationController
 
   # GET /cash_purchases/new
   def new
+    @action = "create"
     @cash_purchase = CashPurchase.new
   end
 
@@ -25,14 +29,12 @@ class CashPurchasesController < ApplicationController
   # POST /cash_purchases.json
   def create
     @cash_purchase = CashPurchase.new(cash_purchase_params)
-
     respond_to do |format|
+      @cash_purchase.Userinfo = current_user.userinfo
       if @cash_purchase.save
-        format.html { redirect_to @cash_purchase, notice: 'Cash purchase was successfully created.' }
-        format.json { render :show, status: :created, location: @cash_purchase }
+        format.js { render_js_for_form @cash_purchase, cash_purchases_path, '保存成功' }
       else
-        format.html { render :new }
-        format.json { render json: @cash_purchase.errors, status: :unprocessable_entity }
+        format.js { render_js_for_form @cash_purchase }
       end
     end
   end
@@ -69,6 +71,6 @@ class CashPurchasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cash_purchase_params
-      params.fetch(:cash_purchase, {})
+      params.require(:cash_purchase).permit(:licenseplatenumber,:colour,:motornumber,:enginenumber,:buyingtime,:carprice,:scheduledmaintenance)
     end
 end

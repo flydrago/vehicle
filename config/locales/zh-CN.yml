@@ -47,6 +47,8 @@ zh-CN:
   business_integral: '积分管理员'
   platform_integral: '积分用户'
   platform_integral_admin: '积分管理员'
+  is already taken: '已经存在'
+
   views:
       pagination:
         first: "&laquo; 首页"
