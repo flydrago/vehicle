@@ -44,12 +44,13 @@ $(function () {
 })
 
 
-
 function search() {
-    // var userinfo_shop_name = $("#search-scope #userinfo_shop_name").val();
-    // var release_state = $("#search-scope #release_state").val();
-    // var request_url = $('#single_map_applies_table').data('source')+"?userinfo_shop_name="+userinfo_shop_name+"&release_state="+release_state;
-    // vihicle_infos_DataTable.ajax.url(request_url).load()
+    var vehicle_brand = $("#search-scope #vehicle_brand").val();
+    var vehicle_name = $("#search-scope #vehicle_name").val();
+    var vehicle_model = $("#search-scope #vehicle_model").val();
+    var vehicle_style = $("#search-scope #vehicle_style").val();
+    var request_url = $('#vihicle_infos_table').data('source')+"?vehicle_brand="+vehicle_brand+"&vehicle_name="+vehicle_name+"&vehicle_model="+vehicle_model+"&vehicle_style="+vehicle_style;
+    vihicle_infos_DataTable.ajax.url(request_url).load()
 }
 
 
