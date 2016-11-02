@@ -29,7 +29,7 @@ class ConsumerInfosDatatable
       rows << raw("<div class='hidden-sm hidden-xs action-buttons'>
           <a class='btn btn-xs btn-info' data-url='#{@view.consumer_info_path(data)}' href='##{@view.consumer_info_path(data)}'>详情</a>
           <a class='btn btn-xs btn-warning' data-url='#{@view.edit_consumer_info_path(data)}' href='##{@view.edit_consumer_info_path(data)}'>编辑</a>
-          <a class='btn btn-xs btn-danger'  data-method='delete' data-remote='true' data-confirm='你确定删除吗?' href=''>删除</a>
+          <a class='btn btn-xs btn-danger'  data-method='delete' data-remote='true' data-confirm='你确定删除吗?' href='/consumer_infos/#{data.id}'>删除</a>
         </div>")
       rows
     end

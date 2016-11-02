@@ -59,8 +59,9 @@ class ConsumerInfosController < ApplicationController
   def destroy
     @consumer_info.destroy
     respond_to do |format|
-      format.html { redirect_to consumer_infos_url, notice: 'Consumer info was successfully destroyed.' }
-      format.json { head :no_content }
+      format.js { render_js_for_form @consumer_info, consumer_infos_path, '客户信息已删除！' }
+      # format.html { redirect_to consumer_infos_url, notice: '客户信息已删除.' }
+      # format.json { head :no_content }
     end
   end
 
