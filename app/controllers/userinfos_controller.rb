@@ -6,7 +6,7 @@ class UserinfosController < ApplicationController
   def index
     respond_to do |format|
       format.html
-      format.json { render json: UserinfoDatatable.new(view_context, current_user) }
+      format.json { render json: ConsumerInfoDatatable.new(view_context, current_user) }
     end
   end
 

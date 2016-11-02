@@ -1,0 +1,47 @@
+
+= form_for @consumer_info , remote:true do |f|
+  #error_explanation{"style"=>"display:none"}
+    %ul
+
+  %table{class: "table table-bordered table-hover"}
+    %tr{class:'attr-category'}
+      %td
+        %label{class:'attr-category'}
+          基本信息
+      %td{colspan:3}
+    %tr
+      %td
+        = f.label :姓名
+      %td
+        = f.text_field :name,:class=>'form-control'
+      %td
+        = f.label :生日
+      %td
+        = f.text_field :birthday,:class=>'form-control'
+    %tr
+      %td
+        = f.label :身份证号
+      %td
+        = f.text_field :identity_card,:class=>'form-control'
+      %td
+        = f.label :地址
+      %td
+        = f.text_field :address,:class=>'form-control'
+    %tr
+      %td
+        = f.label :手机号
+      %td
+        = f.text_field :mobile,:class=>'form-control'
+    %tr
+      %td
+        =  f.label :picture,'上传图像(宽376×高516)',:class=>'col-sm-2 control-label no-padding-right'
+      %td
+        =  f.file_field :picture,:accept=>'image/*'
+        .col-sm-6
+          %img#picture{:style => "height:200px;width:200px"}
+
+  .actions
+    = f.submit '保存',class:'btn btn-info',style:'display:'+(@operation == 'show' ? 'none':'inline' )+''
+    &nbsp;&nbsp;&nbsp;
+    %a{class:'btn','data-href'=> consumer_infos_path}
+      %i{class:'ace-icon fa fa-return bigger-110'}返回

@@ -1,0 +1,1 @@
+json.partial! "consumer_infos/consumer_info", consumer_info: @consumer_info

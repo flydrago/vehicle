@@ -1,0 +1,1 @@
+json.array! @consumer_infos, partial: 'consumer_infos/consumer_info', as: :consumer_info
