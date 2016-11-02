@@ -51,8 +51,8 @@ class VehicleInfoDatatable
       search_params = {}
 
       # search_params[:userinfo_id] = @current_user['userinfo_id']
-      # search_params[:mobile] = /#{params[:mobile]}/ if params[:mobile].present?
-      # search_params[:name] = /#{params[:sSearch]}/ if params[:sSearch].present?
+      search_params[:vehicle_brand] = /#{params[:vehicle_brand]}/ if params[:vehicle_brand].present?
+      search_params[:name] = /#{params[:sSearch]}/ if params[:sSearch].present?
       search_params
     end
 
