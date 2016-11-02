@@ -1,0 +1,15 @@
+%h1 车辆信息列表
+= link_to '添加车辆信息', '', 'data-href' => new_vehicleinfo_path,class:"btn btn-primary"
+.dataTables_wrapper.form-inline.no-footer
+  %table.table.table-hover#vihicle_infos_table{'data-source'=>"/vehicleinfos.json"}
+    %thead
+      %tr
+        %th 车辆品牌
+        %th 车辆名称
+        %th 车辆类型
+        %th 车辆款式
+        %th 创建时间
+        %th 操作
+    %tbody
+
+
