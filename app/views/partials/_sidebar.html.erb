@@ -57,6 +57,15 @@
       <b class="arrow"></b>
     </li>
 
+    <li >
+      <a data-href="<%= vehicleinfos_path %>">
+        <i class="menu-icon fa fa-pencil-square-o"></i>
+        <span class="menu-text"> 车辆信息 </span>
+      </a>
+
+      <b class="arrow"></b>
+    </li>
+
     <% if @userinfo.is_business %>
         <%=render 'partials/business_siderbar' %>
     <% end %>
