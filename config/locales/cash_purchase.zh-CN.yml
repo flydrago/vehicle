@@ -1,0 +1,13 @@
+zh-CN:
+  mongoid:
+    models:
+      cash_purchase: "现金购买"
+    attributes:
+      cash_purchase:
+        licenseplatenumber: "车牌号"
+        colour: "颜色"
+        motornumber: "电动机号码"
+        enginenumber: "发动机号码"
+        buyingtime: "购买日起"
+        carprice: "车价钱"
+        scheduledmaintenance: "预定保养时间"
