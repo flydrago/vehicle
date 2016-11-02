@@ -1,9 +1,16 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @consumer_info.name
-
-= link_to 'Edit', edit_consumer_info_path(@consumer_info)
-\|
-= link_to 'Back', consumer_infos_path
+-#%p#notice= notice
+-#
+-#%p
+-#  %b Name:
+-#  = @consumer_info.name
+-#
+-#= link_to 'Edit', edit_consumer_info_path(@consumer_info)
+-#\|
+-#= link_to 'Back', consumer_infos_path
+%div{class:'col-sm-6',style:'width:100%;'}
+  %div{class:'widget-box widget-color-blue2'}
+    %div{class:'widget-header'}
+      %h4{class:'widget-title lighter smaller'}客户信息详情
+    %div{class:'widget-body'}
+      %div{class:'widget-main padding-8'}
+        = render 'form'

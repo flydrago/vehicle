@@ -30,6 +30,12 @@ function data_table_init(){
         do_search();
     });
 
+    $('#birthday').datetimepicker({
+        sideBySide: true,
+        locale: "zh-cn",
+        format: "YYYY-MM-DD"
+    });
+
 
     $('#'+current_controller_name+"_datatable").DataTable({
         pageLength: 25,
@@ -61,6 +67,7 @@ function data_table_init(){
         }
         return url ;
     }
+
 
 
 //function do_search(){

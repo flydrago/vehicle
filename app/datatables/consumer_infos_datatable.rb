@@ -3,7 +3,6 @@ class ConsumerInfosDatatable
 
   def initialize(view, current_user)
     @view = view
-
     @current_user = current_user
   end
 
@@ -24,9 +23,14 @@ class ConsumerInfosDatatable
       rows << data.mobile
       rows << data.identity_card
       rows << data.birthday.strftime("%Y-%m-%d")
+      rows << data.address
       rows << raw("<img src='#{data.picture.url}' width='51px' height='48px'/>")
       rows << data.created_at.strftime("%Y-%m-%d %H:%M:%S")
-      rows << data.mobile
+      rows << raw("<div class='hidden-sm hidden-xs action-buttons'>
+          <a class='btn btn-xs btn-info' data-url='#{@view.consumer_info_path(data)}' href='##{@view.consumer_info_path(data)}'>详情</a>
+          <a class='btn btn-xs btn-warning' data-url='#{@view.edit_consumer_info_path(data)}' href='##{@view.edit_consumer_info_path(data)}'>编辑</a>
+          <a class='btn btn-xs btn-danger'  data-method='delete' data-remote='true' data-confirm='你确定删除吗?' href=''>删除</a>
+        </div>")
       rows
     end
   end
