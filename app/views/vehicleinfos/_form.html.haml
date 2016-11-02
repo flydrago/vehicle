@@ -1,0 +1,38 @@
+.hr.hr-16.hr-dotted
+.row
+  .container
+    = form_for @vehicleinfo ,url:{action: @action}, remote:true do |f|
+      #error_explanation{"style"=>"display:none"}
+        %ul
+      .col-sm-12
+        %form.form-horizontal
+          .form-group
+            .field
+              = f.label :vehicle_brand,'车辆品牌',:class=>'col-sm-2 control-label no-padding-right'
+            .col-sm-5
+              = f.text_field :vehicle_brand,:class=>'form-control'
+
+          .form-group
+            .field
+              = f.label :vehicle_name,'车辆名称',:class=>'col-sm-2 control-label no-padding-right'
+            .col-sm-5
+              = f.text_field :vehicle_name,:class=>'form-control'
+
+          .form-group
+            .field
+              = f.label :vehicle_model,'车辆类型',:class=>'col-sm-2 control-label no-padding-right'
+            .col-sm-5
+              = f.text_field :vehicle_model,:class=>'form-control'
+
+          .form-group
+            .field
+              = f.label :vehicle_style,'车辆款式',:class=>'col-sm-2 control-label no-padding-right'
+            .col-sm-5
+              = f.text_field :vehicle_style,:class=>'form-control'
+
+          .hr.hr-16.hr-dotted
+          .actions.col-sm-1.col-sm-offset-3
+            = f.submit '保存',:class=> 'btn btn-success',:data => { :disable_with => "保存中..." }
+          .actions.col-sm-8
+            = link_to '返回', 'javascript:history.back();',:class=>'btn btn-primary'
+

@@ -1,0 +1,1 @@
+json.array! @vehicleinfos, partial: 'vehicleinfos/vehicleinfo', as: :vehicleinfo

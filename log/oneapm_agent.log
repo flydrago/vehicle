@@ -1,0 +1,84 @@
+# Logfile created on 2016-11-01 14:34:41 +0800 by logger.rb/53141
+[11/01/16 14:34:41 +0800 song.local (8566)] INFO : Starting the OneAPM Agent (1.3.7) in "development" environment.
+[11/01/16 14:34:41 +0800 song.local (8566)] INFO : Reading configuration from /Users/jyd-pc9053/vehicle/config/oneapm.yml (/Users/jyd-pc9053/vehicle)
+[11/01/16 14:34:41 +0800 song.local (8566)] INFO : Using JSON marshaller (json)
+[11/01/16 14:34:41 +0800 song.local (8566)] INFO : Environment: development
+[11/01/16 14:34:41 +0800 song.local (8566)] INFO : No known dispatcher detected.
+[11/01/16 14:34:41 +0800 song.local (8566)] INFO : Application: Elephant (Development)
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing Rails Sunspot instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing ActiveJob instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing Grape instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing Net instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing Mongo 2 instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing Redis Instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing ActiveRecord 4 instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing deferred Rack instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing Rack::Builder middleware instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing Rails 4 Controller instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing Rails 4 view instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Installing Rails 4 Error instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Finished instrumentation
+[11/01/16 14:34:42 +0800 song.local (8566)] INFO : Doing deferred library-detection before Rack startup
+[11/01/16 14:35:11 +0800 song.local (8566)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/01/16 14:49:49 +0800 song.local (8566)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/01/16 14:56:22 +0800 song.local (8566)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/01/16 15:33:04 +0800 song.local (8566)] INFO : Starting Agent shutdown
+[11/01/16 15:34:08 +0800 song.local (9705)] INFO : Starting the OneAPM Agent (1.3.7) in "development" environment.
+[11/01/16 15:34:08 +0800 song.local (9705)] INFO : Reading configuration from /Users/jyd-pc9053/vehicle/config/oneapm.yml (/Users/jyd-pc9053/vehicle)
+[11/01/16 15:34:08 +0800 song.local (9705)] INFO : Using JSON marshaller (json)
+[11/01/16 15:34:08 +0800 song.local (9705)] INFO : Environment: development
+[11/01/16 15:34:08 +0800 song.local (9705)] INFO : No known dispatcher detected.
+[11/01/16 15:34:08 +0800 song.local (9705)] INFO : Application: Elephant (Development)
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing Rails Sunspot instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing ActiveJob instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing Grape instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing Net instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing Mongo 2 instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing Redis Instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing ActiveRecord 4 instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing deferred Rack instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing Rack::Builder middleware instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing Rails 4 Controller instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing Rails 4 view instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Installing Rails 4 Error instrumentation
+[11/01/16 15:34:09 +0800 song.local (9705)] INFO : Finished instrumentation
+[11/01/16 15:34:11 +0800 song.local (9705)] INFO : Starting Agent shutdown
+[11/01/16 16:23:16 +0800 song.local (10192)] INFO : Starting the OneAPM Agent (1.3.7) in "development" environment.
+[11/01/16 16:23:16 +0800 song.local (10192)] INFO : Reading configuration from /Users/jyd-pc9053/vehicle/config/oneapm.yml (/Users/jyd-pc9053/vehicle)
+[11/01/16 16:23:16 +0800 song.local (10192)] INFO : Using JSON marshaller (json)
+[11/01/16 16:23:16 +0800 song.local (10192)] INFO : Environment: development
+[11/01/16 16:23:16 +0800 song.local (10192)] INFO : No known dispatcher detected.
+[11/01/16 16:23:16 +0800 song.local (10192)] INFO : Application: Elephant (Development)
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing Rails Sunspot instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing ActiveJob instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing Grape instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing Net instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing Mongo 2 instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing Redis Instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing ActiveRecord 4 instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing deferred Rack instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing Rack::Builder middleware instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing Rails 4 Controller instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing Rails 4 view instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Installing Rails 4 Error instrumentation
+[11/01/16 16:23:17 +0800 song.local (10192)] INFO : Finished instrumentation
+[11/01/16 16:23:18 +0800 song.local (10192)] INFO : Doing deferred library-detection before Rack startup
+[11/01/16 16:25:25 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/01/16 16:26:21 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/01/16 16:35:55 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/01/16 16:37:39 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/01/16 16:41:33 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:26:21 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:26:29 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:27:37 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:28:25 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:30:28 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:33:23 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:33:33 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:34:40 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:36:04 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:36:28 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:38:49 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:39:29 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:54:16 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
+[11/02/16 09:57:34 +0800 song.local (10192)] WARN : Skipping RUM instrumentation. Unable to find <body> tag in first 50000 bytes of document.
