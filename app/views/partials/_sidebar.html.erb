@@ -65,6 +65,24 @@
 
       <b class="arrow"></b>
     </li>
+    <li class="">
+      <a href="#" class="dropdown-toggle">
+        <i class="menu-icon fa fa-desktop"></i>
+        <span class="menu-text">销售管理</span>
+        <b class="arrow fa fa-angle-down"></b>
+      </a>
+
+      <b class="arrow"></b>
+      <ul class="submenu">
+        <li class="">
+          <a data-href="<%= cash_purchases_path %>">
+            <i class="menu-icon fa fa-caret-right"></i>
+            现金购买
+          </a>
+          <b class="arrow"></b>
+        </li>
+      </ul>
+    </li>
 
     <% if @userinfo.is_business %>
         <%=render 'partials/business_siderbar' %>

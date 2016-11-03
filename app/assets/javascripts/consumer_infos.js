@@ -27,7 +27,7 @@ function data_table_init(){
 
     //表格选中事件监听
     $('#search-scope #search').click(function(){
-        do_search();
+        search();
     });
 
     $('#birthday').datetimepicker({
@@ -70,17 +70,9 @@ function data_table_init(){
 
 
 
-//function do_search(){
-//
-//    var shopname = $("#search-scope #shopname").val();
-//    var name = $("#search-scope #name").val();
-//    var mobile = $("#search-scope #mobile").val();
-//    var status = $("#search-scope #status").val();
-//
-//    var beginTime = $("#search-scope #beginTime").val();
-//    var endTime = $("#search-scope #endTime").val();
-//
-//    var request_url = $('#'+current_controller_name+"_datatable").data('source')+"&shopname="+shopname+"&name="+name+"&mobile="+mobile+"&status="+status+"&beginTime="+beginTime+"&endTime="+endTime;
-//    $('#'+current_controller_name+"_datatable").DataTable().ajax.url(request_url).load()
-//}
-//
+function search(){
+    var mobile = $("#search-scope #mobile").val();
+    var request_url = $('#'+current_controller_name+"_datatable").data('source')+"?mobile="+mobile;
+    $('#'+current_controller_name+"_datatable").DataTable().ajax.url(request_url).load()
+}
+

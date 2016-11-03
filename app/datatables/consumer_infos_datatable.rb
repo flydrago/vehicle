@@ -55,8 +55,7 @@ class ConsumerInfosDatatable
 
   def get_search_params
     search_params = {}
-
-    search_params[:mobile] = /#{params[:mobile]}/ if params[:mobile].present?
+    search_params[:mobile] = params[:mobile] if params[:mobile].present?
     search_params
   end
 
