@@ -1,18 +1,22 @@
-%h1 车辆信息列表
+%h1 分销商信息列表
 .row#search-scope
   .col-xs-12.row
     .col-xs-1.text-right
       %label{for:'distributor_name'} 单位名称：
     .col-xs-1.text-left
-      %input#vehicle_brand.form-control{:placeholder => '车辆品牌',:type => 'text'}
+      %input#distributor_name.form-control{:placeholder => '单位名称',:type => 'text'}
     .col-xs-1.text-right
       %label{for:'contact_name'} 联系人姓名：
     .col-xs-2.text-left
-      %input#vehicle_name.form-control{:placeholder => '车辆名称',:type => 'text'}
+      %input#contact_name.form-control{:placeholder => '联系人姓名',:type => 'text'}
     .col-xs-1.text-right
       %label{for:'phone_number'} 联系电话：
     .col-xs-1.text-left
-      %input#vehicle_model.form-control{:placeholder => '车辆类型',:type => 'text'}
+      %input#phone_number.form-control{:placeholder => '联系电话',:type => 'text'}
+    .col-xs-1.text-right
+      %label{for:'distributor_address'} 地址：
+    .col-xs-1.text-left
+      %input#distributor_address.form-control{:placeholder => '地址',:type => 'text'}
     .col-xs-1.text-right
       %a.btn.btn-primary.btn-sm#search 搜索
 

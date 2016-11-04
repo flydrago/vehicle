@@ -1,5 +1,7 @@
-%h1 New distributor
-
-= render 'form'
-
-= link_to 'Back', distributors_path
+%div{class:'col-sm-6',style:'width:60%;'}
+  %div{class:'widget-box widget-color-blue2'}
+    %div{class:'widget-header'}
+      %h4{class:'widget-title lighter smaller'}添加分销商信息
+    %div{class:'widget-body'}
+      %div{class:'widget-main padding-8'}
+        = render 'form'
