@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :suppliers
   resources :consumer_infos
   resources :vehicleinfos
   resources :cash_purchases
