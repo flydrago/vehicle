@@ -21,7 +21,7 @@ function data_table_init(){
             //要做的事情
         }
         if(e && e.keyCode==13){ // enter 键
-            do_search();
+            search();
         }
     };
 
@@ -49,8 +49,13 @@ function data_table_init(){
 }
 
 function search(){
-    var mobile = $("#search-scope #mobile").val();
-    var request_url = $('#'+current_controller_name+"_datatable").data('source')+"?mobile="+mobile;
+
+    var name = $("#name").val();
+    var contact_name = $("#contact_name").val();
+    var mobile = $("#mobile").val();
+
+    var request_url = $('#'+current_controller_name+"_datatable").data('source')+"?mobile="+mobile+"&contact_name="+contact_name+"&name="+name;
+    alert(request_url);
     $('#'+current_controller_name+"_datatable").DataTable().ajax.url(request_url).load()
 }
 
