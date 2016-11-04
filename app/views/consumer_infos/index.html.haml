@@ -9,6 +9,7 @@
     .col-xs-1.text-left
       %a.btn.btn-primary.btn-sm#search 搜索
 
+= link_to '添加新客户', '', 'data-href' =>new_consumer_info_path,class:"btn btn-primary"
 .dataTables_wrapper.form-inline.no-footer
 
   %table.table.table-hover{'data-source'=>"/consumer_infos.json",'id' => "#{controller_name}_datatable"}
@@ -17,7 +18,7 @@
         %th 姓名
         %th 手机号码
         %th 身份证号
-        %th 生日
+        %th 出生日期
         %th 地址
         %th 头像
         %th 创建时间
@@ -25,5 +26,5 @@
     %tbody
 
 
-= link_to '添加新客户', '', 'data-href' =>new_consumer_info_path,class:"btn btn-primary"
+
 
