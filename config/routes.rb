@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :distri_product_infos
+  resources :distributors
   resources :consumer_infos
   resources :vehicleinfos
   resources :cash_purchases

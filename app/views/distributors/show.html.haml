@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Distributor name:
+  = @distributor.distributor_name
+%p
+  %b Distributor address:
+  = @distributor.distributor_address
+
+= link_to 'Edit', edit_distributor_path(@distributor)
+\|
+= link_to 'Back', distributors_path
