@@ -1,0 +1,23 @@
+%h1 Listing distri_product_infos
+
+%table
+  %thead
+    %tr
+      %th Product name
+      %th Product price
+      %th
+      %th
+      %th
+
+  %tbody
+    - @distri_product_infos.each do |distri_product_info|
+      %tr
+        %td= distri_product_info.product_name
+        %td= distri_product_info.product_price
+        %td= link_to 'Show', distri_product_info
+        %td= link_to 'Edit', edit_distri_product_info_path(distri_product_info)
+        %td= link_to 'Destroy', distri_product_info, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Distri product info', new_distri_product_info_path
