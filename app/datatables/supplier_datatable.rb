@@ -55,6 +55,8 @@ class SupplierDatatable
   def get_search_params
     search_params = {}
     search_params[:mobile] = params[:mobile] if params[:mobile].present?
+    search_params[:name] = params[:name] if params[:name].present?
+    search_params[:contact_name] = params[:contact_name] if params[:contact_name].present?
     search_params
   end
 
