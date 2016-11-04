@@ -13,15 +13,18 @@ class DistributorsController < ApplicationController
   # GET /distributors/1
   # GET /distributors/1.json
   def show
+    @operation = "show"
   end
 
   # GET /distributors/new
   def new
     @distributor = Distributor.new
+    @action = "create"
   end
 
   # GET /distributors/1/edit
   def edit
+    @action = "update"
   end
 
   # POST /distributors
@@ -31,11 +34,9 @@ class DistributorsController < ApplicationController
 
     respond_to do |format|
       if @distributor.save
-        format.html { redirect_to @distributor, notice: 'Distributor was successfully created.' }
-        format.json { render :show, status: :created, location: @distributor }
+        format.js { render_js_for_form @distributor,distributors_path, '创建成功!' }
       else
-        format.html { render :new }
-        format.json { render json: @distributor.errors, status: :unprocessable_entity }
+        format.js { render_js_for_form @distributor }
       end
     end
   end
@@ -45,11 +46,9 @@ class DistributorsController < ApplicationController
   def update
     respond_to do |format|
       if @distributor.update(distributor_params)
-        format.html { redirect_to @distributor, notice: 'Distributor was successfully updated.' }
-        format.json { render :show, status: :ok, location: @distributor }
+        format.js { render_js_for_form @distributor,distributors_path, '修改成功!' }
       else
-        format.html { render :edit }
-        format.json { render json: @distributor.errors, status: :unprocessable_entity }
+        format.js { render_js_for_form @distributor }
       end
     end
   end
@@ -59,8 +58,7 @@ class DistributorsController < ApplicationController
   def destroy
     @distributor.destroy
     respond_to do |format|
-      format.html { redirect_to distributors_url, notice: 'Distributor was successfully destroyed.' }
-      format.json { head :no_content }
+      format.js { render_js_for_form @distributor,distributors_path, '删除成功!' }
     end
   end
 
@@ -72,6 +70,6 @@ class DistributorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def distributor_params
-      params.require(:distributor).permit(:distributor_name, :distributor_address)
+      params.require(:distributor).permit(:distributor_name,:contact_name,:phone_number,:distributor_address)
     end
 end
