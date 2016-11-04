@@ -30,7 +30,7 @@
 = link_to '添加新供应商', '', 'data-href' =>new_supplier_path,class:"btn btn-primary"
 .dataTables_wrapper.form-inline.no-footer
 
-  %table.table.table-hover{'data-source'=>"/consumer_infos.json",'id' => "#{controller_name}_datatable"}
+  %table.table.table-hover{'data-source'=>"/suppliers.json",'id' => "#{controller_name}_datatable"}
     %thead
       %tr
         %th 供应商单位名称
