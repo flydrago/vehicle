@@ -63,6 +63,7 @@ class VehicleInfoDatatable
       search_params[:vehicle_name] = /#{params[:vehicle_name]}/ if params[:vehicle_name].present?
       search_params[:vehicle_model] = /#{params[:vehicle_model]}/ if params[:vehicle_model].present?
       search_params[:vehicle_style] = /#{params[:vehicle_style]}/ if params[:vehicle_style].present?
+      search_params[:vehicle_brand] = /#{params[:sSearch]}/ if params[:sSearch].present?
       search_params
     end
 

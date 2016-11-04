@@ -61,6 +61,7 @@ class DistributorDatatable
       search_params[:contact_name] = /#{params[:contact_name]}/ if params[:contact_name].present?
       search_params[:phone_number] = /#{params[:phone_number]}/ if params[:phone_number].present?
       search_params[:distributor_address] = /#{params[:distributor_address]}/ if params[:distributor_address].present?
+      search_params[:distributor_name] = /#{params[:sSearch]}/ if params[:sSearch].present?
       search_params
     end
 
