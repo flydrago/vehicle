@@ -14,13 +14,14 @@
         %label.col-sm-4.control-label
         .col-sm-8
           %a.btn.btn-primary{href: 'javascript:search();'} 搜索
-= link_to '添加供货信息', '', 'data-href' =>new_supply_product_info_path,class:"btn btn-primary"
+= link_to '添加供货信息', '', 'data-href' =>new_supplier_supply_product_info_path,class:"btn btn-primary"
 .dataTables_wrapper.form-inline.no-footer
 
-  %table.table.table-hover{'data-source'=>"/supply_product_infos.json",'id' => "#{controller_name}_datatable"}
+  %table.table.table-hover{'data-source'=>"/suppliers/#{@supplier_id}/supply_product_infos.json",'id' => "#{controller_name}_datatable"}
     %thead
       %tr
         %th 供货项目
+        %th 车架号
         %th 单价
         %th 数量
         %th 应付款

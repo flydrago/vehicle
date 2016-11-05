@@ -4,6 +4,8 @@ class SupplyProductInfosController < ApplicationController
   # GET /supply_product_infos
   # GET /supply_product_infos.json
   def index
+    @supplier_id=params[:supplier_id] if params[:supplier_id].present?
+    session[:supplier_id] = @supplier_id if @supplier_id.present?
     respond_to do |format|
       format.html
       format.json { render json: SupplyProductInfosDatatable.new(view_context, current_user) }
@@ -19,6 +21,7 @@ class SupplyProductInfosController < ApplicationController
   # GET /supply_product_infos/new
   def new
     @supply_product_info = SupplyProductInfo.new
+    @supplier=Supplier.find(session[:supplier_id])
   end
 
   # GET /supply_product_infos/1/edit
@@ -32,7 +35,7 @@ class SupplyProductInfosController < ApplicationController
 
     respond_to do |format|
       if @supply_product_info.save
-        format.js { render_js_for_form @supply_product_info, supply_product_infos_path, '供货信息新建成功！' }
+        format.js { render_js "/suppliers/#{@supply_product_info.supplier_id}/distri_product_infos", '供货信息新建成功!' }
       else
         format.html { render :new }
         format.json { render json: @supply_product_info.errors, status: :unprocessable_entity }
@@ -45,8 +48,7 @@ class SupplyProductInfosController < ApplicationController
   def update
     respond_to do |format|
       if @supply_product_info.update(supply_product_info_params)
-        format.js { render_js_for_form @supply_product_info, supply_product_infos_path, '供货信息更新成功！' }
-
+        format.js { render_js "/suppliers/#{@supply_product_info.supplier_id}/distri_product_infos", '供货信息更新成功!' }
       else
         format.html { render :edit }
         format.json { render json: @supply_product_info.errors, status: :unprocessable_entity }
@@ -59,7 +61,7 @@ class SupplyProductInfosController < ApplicationController
   def destroy
     @supply_product_info.destroy
     respond_to do |format|
-      format.js { render_js_for_form @supply_product_info, supply_product_infos_path, '供货信息删除成功！' }
+      format.js { render_js "/suppliers/#{@supply_product_info.supplier_id}/distri_product_infos", '供货信息删除成功!' }
     end
   end
 
@@ -71,6 +73,6 @@ class SupplyProductInfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def supply_product_info_params
-      params.require(:supply_product_info).permit(:purchasePrice, :count, :payable_money, :payreal_money)
+      params.require(:supply_product_info).permit(:purchasePrice, :count, :payable_money, :payreal_money,:license_plate_number)
     end
 end
