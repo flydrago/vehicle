@@ -16,6 +16,8 @@ class DistriProductInfosController < ApplicationController
   # GET /distri_product_infos/1
   # GET /distri_product_infos/1.json
   def show
+    @operation = "show"
+    @distributor = Distributor.find(session[:distributor_id])
   end
 
   # GET /distri_product_infos/new
@@ -27,13 +29,15 @@ class DistriProductInfosController < ApplicationController
 
   # GET /distri_product_infos/1/edit
   def edit
+    @distributor = Distributor.find(session[:distributor_id])
+    @action = "update"
   end
 
   # POST /distri_product_infos
   # POST /distri_product_infos.json
   def create
     @distri_product_info = DistriProductInfo.new(distri_product_info_params)
-
+    @distri_product_info.distributor = Distributor.find(session[:distributor_id])
     respond_to do |format|
       if @distri_product_info.save
         format.js { render_js "/distributors/#{@distri_product_info.distributor_id}/distri_product_infos", '创建成功!' }
@@ -48,7 +52,7 @@ class DistriProductInfosController < ApplicationController
   def update
     respond_to do |format|
       if @distri_product_info.update(distri_product_info_params)
-        format.js { render_js "/distributors/#{@distri_product_info.distributor_id}/distri_product_infos", '修改成功!' }
+        format.js { render_js "/distributors/#{session[:distributor_id]}/distri_product_infos", '修改成功!' }
       else
         # format.js { render_js_for_form @distri_product_info }
       end
