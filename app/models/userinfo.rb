@@ -3,7 +3,6 @@ class Userinfo
   include Mongoid::Timestamps
   include Mongoid::Paperclip
   include Mongoid::Geospatial
-  has_many :RefundFlowings
   has_many :CashPurchase
   field :role_ids, type: Array,default: [] #角色[]
   field :idnumber, type: String #身份证号码1

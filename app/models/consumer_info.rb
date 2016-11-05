@@ -3,7 +3,7 @@ class ConsumerInfo
   include Mongoid::Timestamps
   include Mongoid::Paperclip
   include Mongoid::Geospatial
-
+  has_many :CashPurchase
 
   field :name, type: String #姓名
   field :birthday, type: DateTime #生日

@@ -7,25 +7,49 @@
       .col-sm-12
         %form.form-horizontal
           .form-group
+            .col-sm-2{"style"=>"text-align:right"}
+              %a.btn.btn-primary.btn-sm#bag_product_select_btn 选择车辆
+            .col-sm-8
+              %table#bag_product_table.table.table-striped.table-bordered.table-hover
+                %thead
+                  %tr
+                    %th 车辆品牌
+                    %th 车辆名称
+                    %th 车辆型号
+                    %th 车辆款式
+                    %th 车辆颜色
+                    %th 移除信息
+                %tbody
+                  %tr#bag_product_tr{'style'=>'display:none'}
+                    %td.vehicle_brand
+                    %td.vehicle_name
+                    %td.vehicle_model
+                    %td.vehicle_style
+                    %td.vehicle_color
+                    %td
+                      %input{"type"=>"text","name"=>"product_id","id"=>"product_id","value"=>""}
+                      %a.btn.btn-minier.btn-danger 删除
+            .form-group
+            .col-sm-2{"style"=>"text-align:right"}
+              %a.btn.btn-primary.btn-sm#bag_user_select_btn 选择用户
+            .col-sm-8
+              %table#bag_user_table.table.table-striped.table-bordered.table-hover
+                %thead
+                  %tr
+                    %th 缩略图
+                    %th 商品名称
+                    %th 价格
+                    %th 操作
+          .form-group
             .field
               = f.label :licenseplatenumber,'车牌号',:class=>'col-sm-2 control-label no-padding-right'
             .col-sm-3
               = f.text_field :licenseplatenumber,:class=>'form-control'
           .form-group
             .field
-              = f.label :colour,'颜色',:class=>'col-sm-2 control-label no-padding-right'
+              = f.label :carprice,'购买价格',:class=>'col-sm-2 control-label no-padding-right'
             .col-sm-3
-              = f.text_field :colour,:class=>'form-control'
-          .form-group
-            .field
-              = f.label :motornumber,'电动机号',:class=>'col-sm-2 control-label no-padding-right'
-            .col-sm-3
-              = f.text_field :motornumber,:class=>'form-control'
-          .form-group
-            .field
-              = f.label :enginenumber,'发动机号码',:class=>'col-sm-2 control-label no-padding-right'
-            .col-sm-3
-              = f.text_field :enginenumber,:class=>'form-control'
+              = f.text_field :carprice,:class=>'form-control'
           .form-group
             .field
               = f.label :carprice,'购买价格',:class=>'col-sm-2 control-label no-padding-right'
@@ -46,3 +70,8 @@
             = f.submit '保存',:class=> 'btn btn-success'
           .actions.col-sm-8
             = link_to '返回列表','', 'data-href' => cash_purchases_path,:class=>'btn btn-primary'
+
+
+
+
+

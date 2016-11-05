@@ -62,6 +62,16 @@ class VehicleinfosController < ApplicationController
     end
   end
 
+  ######获取可以销售的电动车
+  def get_vehicle_for_sale
+    respond_to do |format|
+      format.html
+      format.json { render json: VehicleForSaleDatatable.new(view_context, current_user) }
+    end
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vehicleinfo
