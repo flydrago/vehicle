@@ -28,7 +28,7 @@ class VehicleInfoDatatable
         rows << data.created_at.strftime("%Y-%m-%d %H:%M:%S")
         rows << raw("<div class='hidden-sm hidden-xs action-buttons'>
           <a class='btn btn-xs btn-info' data-url='#{@view.vehicleinfo_path(data)}' href='##{@view.vehicleinfo_path(data)}'>查看</a>
-          <a class='btn btn-xs btn-info' data-url='#{@view.edit_vehicleinfo_path(data)}' href='##{@view.edit_vehicleinfo_path(data)}'>
+          <a class='btn btn-xs btn-warning' data-url='#{@view.edit_vehicleinfo_path(data)}' href='##{@view.edit_vehicleinfo_path(data)}'>
                 <i class='ace-icon fa fa-pencil bigger-130'>编辑</i>
           </a>
           <a class='btn btn-xs btn-danger'  data-method='delete' data-remote='true' data-confirm='你确定删除吗?' href='/vehicleinfos/#{data.id}'>删除</a>

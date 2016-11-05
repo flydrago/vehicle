@@ -5,8 +5,13 @@ class DistributorsController < ApplicationController
   # GET /distributors.json
   def index
     respond_to do |format|
+
+
       format.html
+
+
       format.json { render json: DistributorDatatable.new(view_context, current_user) }
+
     end
   end
 
