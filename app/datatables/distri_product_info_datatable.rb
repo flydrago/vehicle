@@ -58,6 +58,8 @@ class DistriProductInfoDatatable
     def get_search_params
       search_params = {}
 
+      search_params[:distributor_id] = params[:distributor_id] if params[:distributor_id].present?
+
       # search_params[:userinfo_id] = @current_user['userinfo_id']
       # search_params[:distributor_name] = /#{params[:distributor_name]}/ if params[:distributor_name].present?
       # search_params[:contact_name] = /#{params[:contact_name]}/ if params[:contact_name].present?
