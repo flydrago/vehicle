@@ -1,5 +1,5 @@
 
-= form_for @supply_product_info , remote:true do |f|
+= form_for @supply_product_info ,url:{action: @action}, remote:true do |f|
   #error_explanation{"style"=>"display:none"}
     %ul
 
@@ -32,5 +32,5 @@
   .actions
     = f.submit '保存',class:'btn btn-info',style:'display:'+(@operation == 'show' ? 'none':'inline' )+''
     &nbsp;&nbsp;&nbsp;
-    %a{class:'btn','data-href'=> suppliers_path}
+    %a{class:'btn','data-href'=>supplier_supply_product_infos_path(@supplier)}
       %i{class:'ace-icon fa fa-return bigger-110'}返回

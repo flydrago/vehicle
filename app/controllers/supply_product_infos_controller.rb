@@ -22,10 +22,12 @@ class SupplyProductInfosController < ApplicationController
   def new
     @supply_product_info = SupplyProductInfo.new
     @supplier=Supplier.find(session[:supplier_id])
+    @action = "create"
   end
 
   # GET /supply_product_infos/1/edit
   def edit
+    @action = "update"
   end
 
   # POST /supply_product_infos
@@ -35,7 +37,7 @@ class SupplyProductInfosController < ApplicationController
 
     respond_to do |format|
       if @supply_product_info.save
-        format.js { render_js "/suppliers/#{@supply_product_info.supplier_id}/distri_product_infos", '供货信息新建成功!' }
+        format.js { render_js "/suppliers/#{@supply_product_info.supplier_id}/supply_product_infos", '供货信息新建成功!' }
       else
         format.html { render :new }
         format.json { render json: @supply_product_info.errors, status: :unprocessable_entity }
@@ -48,7 +50,7 @@ class SupplyProductInfosController < ApplicationController
   def update
     respond_to do |format|
       if @supply_product_info.update(supply_product_info_params)
-        format.js { render_js "/suppliers/#{@supply_product_info.supplier_id}/distri_product_infos", '供货信息更新成功!' }
+        format.js { render_js "/suppliers/#{@supply_product_info.supplier_id}/supply_product_infos", '供货信息更新成功!' }
       else
         format.html { render :edit }
         format.json { render json: @supply_product_info.errors, status: :unprocessable_entity }
@@ -61,7 +63,7 @@ class SupplyProductInfosController < ApplicationController
   def destroy
     @supply_product_info.destroy
     respond_to do |format|
-      format.js { render_js "/suppliers/#{@supply_product_info.supplier_id}/distri_product_infos", '供货信息删除成功!' }
+      format.js { render_js "/suppliers/#{@supply_product_info.supplier_id}/supply_product_infos", '供货信息删除成功!' }
     end
   end
 

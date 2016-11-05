@@ -24,6 +24,7 @@ class SupplyProductInfosDatatable
       rows << data.purchasePrice
       rows << data.purchasePrice
       rows << data.purchasePrice
+      rows << data.purchasePrice
       rows << raw("<div class='hidden-sm hidden-xs action-buttons'>
           <a class='btn btn-xs btn-info' data-url='#{@view.supply_product_info_path(data)}' href='##{@view.supply_product_info_path(data)}'>详情</a>
           <a class='btn btn-xs btn-warning' data-url='#{@view.edit_supply_product_info_path(data)}' href='##{@view.edit_supply_product_info_path(data)}'>编辑</a>
