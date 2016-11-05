@@ -1,0 +1,11 @@
+zh-CN:
+  mongoid:
+    models:
+      consumer_info: "客户信息"
+    attributes:
+      consumer_info:
+        name: "客户姓名"
+        birthday: "出生日期"
+        identity_card: "身份证号"
+        address: "通讯地址"
+        mobile: "手机号码"

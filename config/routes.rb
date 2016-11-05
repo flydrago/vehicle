@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :supply_product_infos
   resources :suppliers
 
   resources :distri_product_infos
