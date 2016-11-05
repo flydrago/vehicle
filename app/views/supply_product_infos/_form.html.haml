@@ -1,0 +1,36 @@
+
+= form_for @supply_product_info , remote:true do |f|
+  #error_explanation{"style"=>"display:none"}
+    %ul
+
+  %table{class: "table table-bordered table-hover"}
+    %tr{class:'attr-category'}
+      %td
+        %label{class:'attr-category'}
+          基本信息
+      %td{colspan:5}
+    %tr
+      %td
+        = f.label :purchasePrice
+      %td
+        = f.text_field :purchasePrice,:class=>'form-control'
+    %tr
+      %td
+        = f.label :count
+      %td
+        = f.text_field :count,:class=>'form-control'
+    %tr
+      %td
+        = f.label :payable_money
+      %td
+        = f.text_field :payable_money,:class=>'form-control'
+    %tr
+      %td
+        = f.label :payreal_money
+      %td
+        = f.text_field :payreal_money,:class=>'form-control'
+  .actions
+    = f.submit '保存',class:'btn btn-info',style:'display:'+(@operation == 'show' ? 'none':'inline' )+''
+    &nbsp;&nbsp;&nbsp;
+    %a{class:'btn','data-href'=> suppliers_path}
+      %i{class:'ace-icon fa fa-return bigger-110'}返回

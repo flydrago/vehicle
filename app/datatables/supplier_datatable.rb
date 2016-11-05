@@ -27,7 +27,7 @@ class SupplierDatatable
       rows << raw("<div class='hidden-sm hidden-xs action-buttons'>
           <a class='btn btn-xs btn-info' data-url='#{@view.supplier_path(data)}' href='##{@view.supplier_path(data)}'>详情</a>
           <a class='btn btn-xs btn-warning' data-url='#{@view.edit_supplier_path(data)}' href='##{@view.edit_supplier_path(data)}'>编辑</a>
-          <a class='btn btn-xs btn-success' data-url='' href='#'>供货信息</a>
+          <a class='btn btn-xs btn-success' data-url='#{@view.supply_product_infos_path}' href='##{@view.supply_product_infos_path}'>供货信息</a>
           <a class='btn btn-xs btn-danger'  data-method='delete' data-remote='true' data-confirm='你确定删除吗?' href='/suppliers/#{data.id}'>删除</a>
         </div>")
       rows

@@ -35,8 +35,7 @@ class ConsumerInfosController < ApplicationController
 
         format.js { render_js_for_form @consumer_info, consumer_infos_path, '客户信息新建成功！' }
       else
-        format.html { render :new }
-        format.json { render json: @consumer_info.errors, status: :unprocessable_entity }
+        format.js  {render_js_for_form @consumer_info}
       end
     end
   end
