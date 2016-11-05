@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     resources :supply_product_infos, shallow: true
   end
 
-  resources :distri_product_infos
-  resources :distributors
+
+  resources :distributors do
+    resources :distri_product_infos, shallow: true
+  end
 
   resources :consumer_infos
   resources :vehicleinfos
