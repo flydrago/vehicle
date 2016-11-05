@@ -1,16 +1,48 @@
-= form_for @distri_product_info do |f|
-  - if @distri_product_info.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@distri_product_info.errors.count, "error")} prohibited this distri_product_info from being saved:"
-      %ul
-        - @distri_product_info.errors.full_messages.each do |msg|
-          %li= msg
+= form_for @distri_product_info ,url:{action: @action}, remote:true do |f|
+  #error_explanation{"style"=>"display:none"}
+    %ul
 
-  .field
-    = f.label :product_name
-    = f.text_field :product_name
-  .field
-    = f.label :product_price
-    = f.text_field :product_price
+  %table{class: "table table-bordered table-hover"}
+    %tr{class:'attr-category'}
+      %td
+        %label{class:'attr-category'}
+          基本信息
+      %td{colspan:3}
+    %tr
+      %td
+        = f.label :产品名称
+      %td
+        = f.text_field :product_name,:class=>'form-control'
+    %tr
+      %td
+        = f.label :产品型号
+      %td
+        = f.text_field :product_model,:class=>'form-control'
+    %tr
+      %td
+        = f.label :单价
+      %td
+        = f.text_field :product_price,:class=>'form-control'
+    %tr
+      %td
+        = f.label :数量
+      %td
+        = f.text_field :product_count,:class=>'form-control'
+    %tr
+      %td
+        = f.label :应收款
+      %td
+        = f.text_field :should_get_money,:class=>'form-control'
+    %tr
+      %td
+        = f.label :实收款
+      %td
+        = f.text_field :real_get_money,:class=>'form-control'
+
   .actions
-    = f.submit 'Save'
+    = f.submit '保存',class:'btn btn-info',style:'display:'+(@operation == 'show' ? 'none':'inline' )+'',:class=> 'btn btn-success',:data => { :disable_with => "保存中..." }
+    &nbsp;&nbsp;&nbsp;
+    %a{class:'btn','data-href'=> distributor_distri_product_infos_path(@distributor)}
+      %i{class:'ace-icon fa fa-return bigger-110'}返回
+
+

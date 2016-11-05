@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   
-  resources :suppliers
 
-  resources :distri_product_infos
-  resources :distributors
+  resources :suppliers do
+    resources :supply_product_infos, shallow: true
+  end
+
+
+  resources :distributors do
+    resources :distri_product_infos, shallow: true
+  end
 
   resources :consumer_infos
   resources :vehicleinfos

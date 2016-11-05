@@ -29,7 +29,7 @@ class DistributorDatatable
           <a class='btn btn-xs btn-warning' data-url='#{@view.edit_distributor_path(data)}' href='##{@view.edit_distributor_path(data)}'>
                 <i class='ace-icon fa fa-pencil bigger-130'>编辑</i>
           </a>
-          <a class='btn btn-xs btn-success' data-url='#{@view.distri_product_infos_path(data)}' href='##{@view.distri_product_infos_path(data)}'>销售信息</a>
+          <a class='btn btn-xs btn-success' data-url='#{@view.distributor_distri_product_infos_path(data)}' href='##{@view.distributor_distri_product_infos_path(data)}'>销售信息</a>
           <a class='btn btn-xs btn-danger'  data-method='delete' data-remote='true' data-confirm='你确定删除吗?' href='/distributors/#{data.id}'>删除</a>
          </div>")
         rows

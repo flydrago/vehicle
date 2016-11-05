@@ -1,12 +1,7 @@
-%p#notice= notice
-
-%p
-  %b Product name:
-  = @distri_product_info.product_name
-%p
-  %b Product price:
-  = @distri_product_info.product_price
-
-= link_to 'Edit', edit_distri_product_info_path(@distri_product_info)
-\|
-= link_to 'Back', distri_product_infos_path
+%div{class:'col-sm-6',style:'width:60%;'}
+  %div{class:'widget-box widget-color-blue2'}
+    %div{class:'widget-header'}
+      %h4{class:'widget-title lighter smaller'}销售信息详情
+    %div{class:'widget-body'}
+      %div{class:'widget-main padding-8'}
+        -#= render 'form'
