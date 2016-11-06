@@ -27,19 +27,31 @@
                     %td.vehicle_style
                     %td.vehicle_color
                     %td
-                      %input{"type"=>"text","name"=>"product_id","id"=>"product_id","value"=>""}
                       %a.btn.btn-minier.btn-danger 删除
-            .form-group
+          .form-group
             .col-sm-2{"style"=>"text-align:right"}
-              %a.btn.btn-primary.btn-sm#bag_user_select_btn 选择用户
+              %a.btn.btn-primary.btn-sm#bag_user_select_btn 客户信息
             .col-sm-8
               %table#bag_user_table.table.table-striped.table-bordered.table-hover
                 %thead
                   %tr
-                    %th 缩略图
-                    %th 商品名称
-                    %th 价格
+                    %th 姓名
+                    %th 手机号码
+                    %th 身份证号
+                    %th 生日
+                    %th 地址
+                    %th 时间
                     %th 操作
+                %tbody
+                  %tr#bag_user_tr{'style'=>'display:none'}
+                    %td.name
+                    %td.mobile
+                    %td.identity_card
+                    %td.birthday
+                    %td.address
+                    %td.addtime
+                    %td
+                      %a.btn.btn-minier.btn-danger 删除
           .form-group
             .field
               = f.label :licenseplatenumber,'车牌号',:class=>'col-sm-2 control-label no-padding-right'
@@ -65,6 +77,8 @@
               = f.label :scheduledmaintenance,'预约保养时间',:class=>'col-sm-2 control-label no-padding-right'
             .col-sm-3
               = f.text_field :scheduledmaintenance,:class=>'form-control'
+              %input{"type"=>"text","name"=>"product_id","id"=>"product_id","value"=>""}
+              %input{"type"=>"text","name"=>"consumer_id","id"=>"consumer_id","value"=>""}
           .hr.hr-16.hr-dotted
           .actions.col-sm-1.col-sm-offset-3
             = f.submit '保存',:class=> 'btn btn-success'

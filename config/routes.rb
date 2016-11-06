@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :consumer_infos
+  get 'get_consumer_infos/get_user_for_sale' => 'consumer_infos#get_user_for_sale'
   resources :vehicleinfos
   get 'get_vehicleinfos/get_vehicle_for_sale' => 'vehicleinfos#get_vehicle_for_sale'
   resources :cash_purchases

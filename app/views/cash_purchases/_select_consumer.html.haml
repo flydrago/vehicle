@@ -1,18 +1,19 @@
 /模态框
-.modal.fade.bs-example-modal-lg#product_select_modal{'tabindex'=>-1,'role'=>'dialog','aria-labelledby'=>'myModalLabel'}
+.modal.fade.bs-example-modal-lg#user_select_modal{'tabindex'=>-1,'role'=>'dialog','aria-labelledby'=>'myModalLabel'}
   .modal-dialog.modal-lg{'role'=>'document'}
     .modal-content
-      %table#product_select_table.table.table-striped.table-bordered.table-hover{'data-source'=>"/get_vehicleinfos/get_vehicle_for_sale.json"}
+      %table#user_select_table.table.table-striped.table-bordered.table-hover{'data-source'=>"get_consumer_infos/get_user_for_sale.json"}
         %thead
           %tr
-            %th 车辆信息
-            %th 车辆品牌
-            %th 车辆名称
-            %th 车辆型号
-            %th 车辆款式
-            %th 车辆颜色
+            %th 姓名
+            %th 手机号码
+            %th 身份证号
+            %th 生日
+            %th 地址
+            %th 时间
+            %th 操作
     .modal-footer
-      %button.btn.btn-primary#product_select_modal_callback 确定
+      %button.btn.btn-primary#user_select_modal_callback 确定
       %button.btn.btn-default{'data-dismiss'=>'modal'} 关闭
 :javascript
     //初始化商品删除监听
@@ -24,7 +25,7 @@
     // select_table  弹出框的tableid
     // select_modal  弹出框的modalid
     // callback_btn  弹出框的确认按钮
-    group_product_select_modal_init("bag_product_select_btn","product_select_table" ,"product_select_modal","product_select_modal_callback",function(data){
+    group_product_select_modal_init("bag_user_select_btn","user_select_table" ,"user_select_modal","user_select_modal_callback",function(data){
         add_select_product("product_id",data);
     });
     //商品选择模态框初始化
@@ -72,7 +73,7 @@
      add_shangpin_tr(data);
     }
    function add_shangpin_tr(data) {
-      var trmodel = $("#bag_product_tr").clone();
+      var trmodel = $("#bag_user_tr").clone();
       trmodel.find(".vehicle_brand").html(data.vehicle_brand);
       trmodel.find(".vehicle_name").html(data.vehicle_name);
       trmodel.find(".vehicle_model").html(data.vehicle_model);
@@ -83,7 +84,7 @@
        });
       trmodel.removeAttr("id");
       trmodel.show();
-      $("#bag_product_table tbody").append(trmodel);
+      $("#bag_user_table tbody").append(trmodel);
       $("#product_id").val(data._id);
     }
 

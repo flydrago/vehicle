@@ -64,6 +64,13 @@ class ConsumerInfosController < ApplicationController
     end
   end
 
+#####################用于购买时的用户信息查询
+  def get_user_for_sale
+    respond_to do |format|
+      format.html
+      format.json { render json: ConsumerInfosDatatable.new(view_context, current_user) }
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_consumer_info
