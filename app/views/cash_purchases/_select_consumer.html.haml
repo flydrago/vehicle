@@ -74,18 +74,19 @@
     }
    function add_shangpin_tr(data) {
       var trmodel = $("#bag_user_tr").clone();
-      trmodel.find(".vehicle_brand").html(data.vehicle_brand);
-      trmodel.find(".vehicle_name").html(data.vehicle_name);
-      trmodel.find(".vehicle_model").html(data.vehicle_model);
-      trmodel.find(".vehicle_style").html(data.vehicle_style);
-      trmodel.find(".vehicle_color").html(data.vehicle_color);
+      trmodel.find(".name").html(data.name);
+      trmodel.find(".mobile").html(data.mobile);
+      trmodel.find(".identity_card").html(data.identity_card);
+      trmodel.find(".birthday").html(data.birthday);
+      trmodel.find(".address").html(data.address);
+      trmodel.find(".addtime").html(data.created_at);
            trmodel.find("a").click(function () {
            $(this).parent().parent().remove();
        });
       trmodel.removeAttr("id");
       trmodel.show();
       $("#bag_user_table tbody").append(trmodel);
-      $("#product_id").val(data._id);
+      $("#consumer_id").val(data._id);
     }
 
 

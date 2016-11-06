@@ -19,7 +19,6 @@ class ConsumerInfosDatatable
   def data
     get_datas.map do |data|
       rows = []
-      rows << data
       rows << data.name
       rows << data.mobile
       rows << data.identity_card
