@@ -2,9 +2,9 @@ class CashPurchase
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Attributes::Dynamic
-  belongs_to :Userinfo #存放运营商id
-  belongs_to :ConsumerInfo #关联用户信息
-  belongs_to :Vehicleinfo #关联车辆信息
+  belongs_to :userinfo #存放运营商id
+  belongs_to :consumer_info #关联用户信息
+  belongs_to :vehicleinfo #关联车辆信息
   field :licenseplatenumber, :type => String #车牌号
   field :buyingtime, :type => DateTime #购买日起
   field :carprice, :type => Float #车价钱

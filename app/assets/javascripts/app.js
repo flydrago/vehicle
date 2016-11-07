@@ -1,2 +1,2 @@
-//= require lark.js
+//= require vehicle.js
 //= require chinese_money.js

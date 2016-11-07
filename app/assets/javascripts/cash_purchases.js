@@ -28,4 +28,34 @@ $(document).ready(function () {
         ], fnInitComplete: function (oSettings, json) {
         }
     });
+    //////
+    consumer_info_select_modal_init("consumer_infos_select_btn",function(data){
+        console.log("回调信息为："+JSON.stringify(data));
+        $("#consumer_infos_select_callback").html(JSON.stringify(data));
+    });
 });
+
+
+function add_select_product(id,data) {
+    if ($("#"+id).val()!=""){
+        lark_alert("请清除商品后再添加商品")
+        return
+    }
+    add_shangpin_tr(data);
+}
+function add_shangpin_tr(data) {
+    var trmodel = $("#bag_user_tr").clone();
+    trmodel.find(".name").html(data.name);
+    trmodel.find(".mobile").html(data.mobile);
+    trmodel.find(".identity_card").html(data.identity_card);
+    trmodel.find(".birthday").html(data.birthday);
+    trmodel.find(".address").html(data.address);
+    trmodel.find(".addtime").html(data.created_at);
+    trmodel.find("a").click(function () {
+        $(this).parent().parent().remove();
+    });
+    trmodel.removeAttr("id");
+    trmodel.show();
+    $("#bag_user_table tbody").append(trmodel);
+    $("#consumer_id").val(data._id);
+}

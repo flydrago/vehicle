@@ -28,7 +28,9 @@ class ConsumerInfosController < ApplicationController
   # POST /consumer_infos
   # POST /consumer_infos.json
   def create
+
     @consumer_info = ConsumerInfo.new(consumer_info_params)
+    @consumer_info['userinfo_id'] = current_user['userinfo_id']
 
     respond_to do |format|
       if @consumer_info.save
@@ -65,12 +67,12 @@ class ConsumerInfosController < ApplicationController
   end
 
 #####################用于购买时的用户信息查询
-  def get_user_for_sale
+  def select
     respond_to do |format|
-      format.html
-      format.json { render json: ConsumerInfosDatatable.new(view_context, current_user) }
+      format.json { render json: ConsumerInfosSelectDatatable.new(view_context, current_user) }
     end
   end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_consumer_info

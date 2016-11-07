@@ -3,7 +3,7 @@ class Vehicleinfo
   include Mongoid::Timestamps
   include Mongoid::Paperclip
   include Mongoid::Attributes::Dynamic
-  has_many :CashPurchase
+  has_many :cash_purchases
   field :vehicle_brand, type: String  ##车辆品牌
   field :vehicle_name, type: String   ##车辆名称
   field :vehicle_model, type: String  ##车辆型号

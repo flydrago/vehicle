@@ -54,7 +54,8 @@ class ConsumerInfosDatatable
   end
 
   def get_search_params
-    search_params = {}
+
+    search_params = {:userinfo_id => @current_user['userinfo_id']}
     search_params[:mobile] = params[:mobile] if params[:mobile].present?
     search_params
   end

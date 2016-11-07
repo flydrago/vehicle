@@ -13,6 +13,9 @@
 %input{"type"=>"hidden","id"=>"current_action_name","value"=>"#{action_name}"}
 = yield
 
+
+= render 'consumer_infos/select'
+
 -if flash[:notice]
   :javascript
     $.gritter.add({
