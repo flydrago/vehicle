@@ -62,6 +62,13 @@ class VehicleinfosController < ApplicationController
     end
   end
 
+  # GET /vehicleinfos/select.json
+  def select
+    respond_to do |format|
+      format.json { render json: VehicleInfosSelectDatatable.new(view_context, current_user) }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vehicleinfo

@@ -16,5 +16,5 @@ class Vehicleinfo
   validates :vehicle_model, presence: true
   validates :vehicle_style, presence: true
   validates :vehicle_color, presence: true
-  validates :vehicle_engine_number, uniqueness: {message: "已存在" }, presence: true, length: {maximum: 20, too_long: "最大长度为%{count}个字符"}
+  validates :vehicle_engine_number, uniqueness: { message: "已存在" }, presence: true, length: {maximum: 20, too_long: "最大长度为%{count}个字符"}
 end
