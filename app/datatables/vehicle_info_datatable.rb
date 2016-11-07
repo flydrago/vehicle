@@ -58,7 +58,7 @@ class VehicleInfoDatatable
     def get_search_params
       search_params = {}
 
-      # search_params[:userinfo_id] = @current_user['userinfo_id']
+      search_params[:userinfo_id] = @current_user['userinfo_id']
       search_params[:vehicle_brand] = /#{params[:vehicle_brand]}/ if params[:vehicle_brand].present?
       search_params[:vehicle_name] = /#{params[:vehicle_name]}/ if params[:vehicle_name].present?
       search_params[:vehicle_model] = /#{params[:vehicle_model]}/ if params[:vehicle_model].present?
