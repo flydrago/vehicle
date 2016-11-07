@@ -1,0 +1,38 @@
+= form_for @distributor ,url:{action: @action}, remote:true do |f|
+  #error_explanation{"style"=>"display:none"}
+    %ul
+
+  %table{class: "table table-bordered table-hover"}
+    %tr{class:'attr-category'}
+      %td
+        %label{class:'attr-category'}
+          基本信息
+      %td{colspan:3}
+    %tr
+      %td
+        = f.label :单位名称
+      %td
+        = f.text_field :distributor_name,:class=>'form-control'
+    %tr
+      %td
+        = f.label :联系人姓名
+      %td
+        = f.text_field :contact_name,:class=>'form-control'
+    %tr
+      %td
+        = f.label :联系电话
+      %td
+        = f.text_field :phone_number,:class=>'form-control'
+    %tr
+      %td
+        = f.label :地址
+      %td
+        = f.text_field :distributor_address,:class=>'form-control'
+
+  .actions
+    = f.submit '保存',class:'btn btn-info',style:'display:'+(@operation == 'show' ? 'none':'inline' )+'',:class=> 'btn btn-success',:data => { :disable_with => "保存中..." }
+    &nbsp;&nbsp;&nbsp;
+    %a{class:'btn','data-href'=> distributors_path}
+      %i{class:'ace-icon fa fa-return bigger-110'}返回
+
+

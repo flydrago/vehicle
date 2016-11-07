@@ -1,0 +1,1 @@
+json.partial! "distri_product_infos/distri_product_info", distri_product_info: @distri_product_info

@@ -1,0 +1,11 @@
+zh-CN:
+  mongoid:
+    models:
+      supply_product_info: "客户信息"
+    attributes:
+      supply_product_info:
+        purchasePrice: "单价"
+        count: "数量"
+        payable_money: "应付金额"
+        payreal_money: "实付金额"
+

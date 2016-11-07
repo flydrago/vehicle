@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   
+
+  resources :suppliers do
+    resources :supply_product_infos, shallow: true
+  end
+
+
+  resources :distributors do
+    resources :distri_product_infos, shallow: true
+  end
+
   resources :consumer_infos
   resources :vehicleinfos
   resources :cash_purchases

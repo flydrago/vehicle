@@ -1,24 +1,26 @@
-%h1 车辆信息列表
-.row#search-scope
-  .col-xs-12.row
-    .col-xs-1.text-right
-      %label{for:'vehicle_brand'} 车辆品牌：
-    .col-xs-1.text-left
-      %input#vehicle_brand.form-control{:placeholder => '车辆品牌',:type => 'text'}
-    .col-xs-1.text-right
-      %label{for:'vehicle_name'} 车辆名称：
-    .col-xs-2.text-left
-      %input#vehicle_name.form-control{:placeholder => '车辆名称',:type => 'text'}
-    .col-xs-1.text-right
-      %label{for:'vehicle_model'} 车辆类型：
-    .col-xs-1.text-left
-      %input#vehicle_model.form-control{:placeholder => '车辆类型',:type => 'text'}
-    .col-xs-1.text-right
-      %label{for:'vehicle_style'} 车辆款式：
-    .col-xs-1.text-left
-      %input#vehicle_style.form-control{:placeholder => '车辆款式',:type => 'text'}
-    .col-xs-1.text-right
-      %a.btn.btn-primary.btn-sm#search 搜索
+%div{class:'page-header'}
+  %h1 车辆信息列表
+.well
+  .row#search-scope
+    .col-xs-12.row
+      .col-xs-1.text-right
+        %label{for:'vehicle_brand'} 车辆品牌：
+      .col-xs-1.text-left
+        %input#vehicle_brand.form-control{:placeholder => '车辆品牌',:type => 'text'}
+      .col-xs-1.text-right
+        %label{for:'vehicle_name'} 车辆名称：
+      .col-xs-2.text-left
+        %input#vehicle_name.form-control{:placeholder => '车辆名称',:type => 'text'}
+      .col-xs-1.text-right
+        %label{for:'vehicle_model'} 车辆类型：
+      .col-xs-1.text-left
+        %input#vehicle_model.form-control{:placeholder => '车辆类型',:type => 'text'}
+      .col-xs-1.text-right
+        %label{for:'vehicle_style'} 车辆款式：
+      .col-xs-1.text-left
+        %input#vehicle_style.form-control{:placeholder => '车辆款式',:type => 'text'}
+      .col-xs-1.text-right
+        %a.btn.btn-primary.btn-sm#search 搜索
 
 = link_to '添加车辆信息', '', 'data-href' => new_vehicleinfo_path,class:"btn btn-primary"
 .dataTables_wrapper.form-inline.no-footer

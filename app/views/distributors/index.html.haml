@@ -1,0 +1,38 @@
+%div{class:'page-header'}
+  %h1 分销商信息列表
+.well
+  .row#search-scope
+    .col-xs-12.row
+      .col-xs-1.text-right
+        %label{for:'distributor_name'} 单位名称：
+      .col-xs-1.text-left
+        %input#distributor_name.form-control{:placeholder => '单位名称',:type => 'text'}
+      .col-xs-1.text-right
+        %label{for:'contact_name'} 联系人姓名：
+      .col-xs-2.text-left
+        %input#contact_name.form-control{:placeholder => '联系人姓名',:type => 'text'}
+      .col-xs-1.text-right
+        %label{for:'phone_number'} 联系电话：
+      .col-xs-1.text-left
+        %input#phone_number.form-control{:placeholder => '联系电话',:type => 'text'}
+      .col-xs-1.text-right
+        %label{for:'distributor_address'} 地址：
+      .col-xs-1.text-left
+        %input#distributor_address.form-control{:placeholder => '地址',:type => 'text'}
+      .col-xs-1.text-right
+        %a.btn.btn-primary.btn-sm#search 搜索
+
+= link_to '添加分销商信息', '', 'data-href' => new_distributor_path,class:"btn btn-primary"
+.dataTables_wrapper.form-inline.no-footer
+  %table.table.table-hover#distributor_table{'data-source'=>"/distributors.json"}
+    %thead
+      %tr
+        %th 单位名称
+        %th 联系人姓名
+        %th 联系电话
+        %th 地址
+        %th 创建时间
+        %th 操作
+    %tbody
+
+
