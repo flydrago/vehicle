@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   resources :consumer_infos do
     get 'select', to: "consumer_infos#select", :on => :collection
   end
-  resources :vehicleinfos
+  resources :vehicleinfos do
+    get 'select', to: "vehicleinfos#select", :on => :collection
+  end
+
   resources :cash_purchases
   get 'dashboards/index' => 'dashboards#index'
   get 'dashboards/no_permission' => 'dashboards#no_permission'

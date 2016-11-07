@@ -9,6 +9,7 @@ class Distributor
   field :phone_number, type: String #分销商联系电话号
   field :distributor_address, type: String #地址
 
+  belongs_to :userinfo
   has_many :distri_product_infos #一对多关联分销商品信息
 
 end

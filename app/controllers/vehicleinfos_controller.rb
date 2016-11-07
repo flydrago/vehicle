@@ -31,6 +31,7 @@ class VehicleinfosController < ApplicationController
   # POST /vehicleinfos.json
   def create
     @vehicleinfo = Vehicleinfo.new(vehicleinfo_params)
+    @vehicleinfo['userinfo_id'] = current_user['userinfo_id']
 
     respond_to do |format|
       if @vehicleinfo.save
@@ -61,8 +62,13 @@ class VehicleinfosController < ApplicationController
       format.js { render_js_for_form @vehicleinfo,vehicleinfos_path, '删除成功!' }
     end
   end
-
-
+  
+  # GET /vehicleinfos/select.json
+  def select
+    respond_to do |format|
+      format.json { render json: VehicleInfosSelectDatatable.new(view_context, current_user) }
+    end
+  end
 
 
   private

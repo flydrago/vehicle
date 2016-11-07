@@ -1,0 +1,16 @@
+/模态框
+.modal.fade.bs-example-modal-lg#vehicleinfo_select_table_modal{'tabindex'=>-1,'role'=>'dialog','aria-labelledby'=>'myModalLabel'}
+  .modal-dialog.modal-lg{'role'=>'document'}
+    .modal-content
+      %table#vehicleinfo_select_table.table.table-striped.table-bordered.table-hover{'data-source'=>"/vehicleinfos/select.json"}
+        %thead
+          %tr
+            %th 车辆品牌
+            %th 车辆名称
+            %th 车辆型号
+            %th 发动机型号
+            %th 车辆颜色
+            %th 车辆款式
+    .modal-footer
+      %button.btn.btn-primary#vehicleinfo_select_table_callback 确定
+      %button.btn.btn-default{'data-dismiss'=>'modal'} 关闭

@@ -233,6 +233,75 @@ function consumer_info_select_modal_init(modal_but_id, callback) {
 }
 
 
+
+//车辆信息选择模态框初始化
+function vehicleinfo_select_modal_init(modal_but_id, callback) {
+
+    var table_id = "vehicleinfo_select_table";
+
+    console.log("初始化1");
+    $("#" + table_id).DataTable({
+        /**
+         sScrollY: "200px",//enable vertical scrolling
+         sScrollX: "100%",
+         sScrollXInner: "120%",//enable horizintal scrolling with its content 120% of its container
+         bScrollCollapse: true,
+         */
+        pageLength: 5,
+        bProcessing: true,
+        bServerSide: true,
+        stateSave: true,
+        sAjaxSource: $("#" + table_id).data('source'),
+        language: datatable_language,
+        "order": [[3, 'asc']],
+        "columns": [
+            {"data": "vehicle_brand"},
+            {"data": "vehicle_name"},
+            {"data": "vehicle_model"},
+            {"data": "vehicle_engine_number"},
+            {"data": "vehicle_color"},
+            {"data": "vehicle_style"}
+        ],
+        "columnDefs": [
+            {"orderable": false, "targets": 1},
+            {"orderable": false, "targets": 2},
+            {"orderable": false, "targets": 3},
+            {"orderable": false, "targets": 4},
+            {"orderable": false, "targets": 5}
+        ]
+    });
+
+    $("#" + table_id + " tbody").on('click', 'tr', function () {
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+        }
+        else {
+            $("#" + table_id).DataTable().$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    });
+
+    //初始化
+    $("#" + table_id + "_modal").modal({show: false});
+
+    //表格选中事件监听
+    $('#' + modal_but_id).click(function () {
+        $("#" + table_id + "_modal").modal('show');
+    });
+
+    $("#" + table_id + "_callback").click(function () {
+        data = $("#" + table_id).DataTable().row('.selected').data();
+        if (typeof(callback) == "function" && typeof(data)=="object") {
+            callback(data);
+            $("#" + table_id + "_modal").modal('hide');
+        }else{
+            lark_alert("请选择车辆信息！");
+        }
+    });
+}
+
+
+
 //是否为正整数
 function isPositiveNum(s) {
     var re = /^[0-9]*[1-9][0-9]*$/;

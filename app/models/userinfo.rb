@@ -13,6 +13,11 @@ class Userinfo
   field :remark, type: String, default: '' #描述
   field :role_marks, type: Array, default: [] #角色标识 business: 运营商角色（对运营商），platform：平台角色（对平台）
   field :status, type: Integer, default: 0 #启用状态，0初始化，1启用，-1禁用1
+
+
+  has_many :consumer_infos
+  has_many :vehicleinfos
+
   validates :name, :email, :shopname, presence: true #名称，种类不能为空
   validates :mobile, presence: true, format: {with: /\A\d{11}\z/, message: "不合法!"}
 
