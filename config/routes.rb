@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :distri_product_infos, shallow: true
   end
 
-  resources :consumer_infos
+  resources :consumer_infos do
+    get 'select', to: "consumer_infos#select", :on => :collection
+  end
   resources :vehicleinfos
   resources :cash_purchases
   get 'dashboards/index' => 'dashboards#index'

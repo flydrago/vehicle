@@ -28,7 +28,9 @@ class ConsumerInfosController < ApplicationController
   # POST /consumer_infos
   # POST /consumer_infos.json
   def create
+
     @consumer_info = ConsumerInfo.new(consumer_info_params)
+    @consumer_info['userinfo_id'] = current_user['userinfo_id']
 
     respond_to do |format|
       if @consumer_info.save
@@ -61,6 +63,12 @@ class ConsumerInfosController < ApplicationController
       format.js { render_js_for_form @consumer_info, consumer_infos_path, '客户信息已删除！' }
       # format.html { redirect_to consumer_infos_url, notice: '客户信息已删除.' }
       # format.json { head :no_content }
+    end
+  end
+
+  def select
+    respond_to do |format|
+      format.json { render json: ConsumerInfosSelectDatatable.new(view_context, current_user) }
     end
   end
 
