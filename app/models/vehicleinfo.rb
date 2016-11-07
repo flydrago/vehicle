@@ -11,6 +11,8 @@ class Vehicleinfo
   field :vehicle_color, type: String  ##车辆颜色
   field :vehicle_engine_number, type: String  ##车辆发动机号
 
+  belongs_to :userinfo
+
   validates :vehicle_brand, presence: true
   validates :vehicle_name, presence: true
   validates :vehicle_model, presence: true

@@ -31,6 +31,7 @@ class VehicleinfosController < ApplicationController
   # POST /vehicleinfos.json
   def create
     @vehicleinfo = Vehicleinfo.new(vehicleinfo_params)
+    @vehicleinfo['userinfo_id'] = current_user['userinfo_id']
 
     respond_to do |format|
       if @vehicleinfo.save
