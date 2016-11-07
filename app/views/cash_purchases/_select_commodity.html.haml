@@ -14,7 +14,7 @@
     .modal-footer
       %button.btn.btn-primary#product_select_modal_callback 确定
       %button.btn.btn-default{'data-dismiss'=>'modal'} 关闭
-:javascript
+  :javascript
     //初始化商品删除监听
     $("#product_select_table tbody tr").find("a").click(function(){
       $(this).parent().parent().remove();
@@ -49,29 +49,29 @@
         }
       } );
 
-    //初始化
-    $('#'+select_modal).modal({show: false});
-    //表格选中事件监听
-    $('#'+modal_but_id).click(function(){
-      $('#'+select_modal).modal('show');
-    });
+        //初始化
+        $('#'+select_modal).modal({show: false});
+        //表格选中事件监听
+        $('#'+modal_but_id).click(function(){
+          $('#'+select_modal).modal('show');
+        });
 
-    $("#"+callback_btn).click(function(){
-      data = $('#'+select_table).DataTable().row('.selected').data();
-      if(typeof(callback) == "function"){
-        callback(data[0]);
-        $('#'+select_modal).modal('hide');
-      }
-    });
-  }
+        $("#"+callback_btn).click(function(){
+          data = $('#'+select_table).DataTable().row('.selected').data();
+          if(typeof(callback) == "function"){
+            callback(data[0]);
+            $('#'+select_modal).modal('hide');
+          }
+        });
+    }
     function add_select_product(id,data) {
-    if ($("#"+id).val()!=""){
-    lark_alert("请清除商品后再添加商品")
-    return
+        if ($("#"+id).val()!=""){
+        lark_alert("请清除商品后再添加商品")
+        return
+       }
+      add_shangpin_tr(id , data);
     }
-     add_shangpin_tr(data);
-    }
-   function add_shangpin_tr(data) {
+    function add_shangpin_tr(data) {
       var trmodel = $("#bag_product_tr").clone();
       trmodel.find(".vehicle_brand").html(data.vehicle_brand);
       trmodel.find(".vehicle_name").html(data.vehicle_name);
@@ -84,12 +84,5 @@
       trmodel.removeAttr("id");
       trmodel.show();
       $("#bag_product_table tbody").append(trmodel);
-      $("#product_id").val(data._id);
+      $("#"+id).val(data._id);
     }
-
-
-
-
-
-
-
